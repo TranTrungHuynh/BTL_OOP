@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Country extends Entity {
@@ -12,7 +13,7 @@ public class Country extends Entity {
 		id = count.incrementAndGet();
 	}
 
-	public Country(String name, String description, String continent, String link, String date) {
+	public Country(String name, String description, String continent, String link, Date date) {
 		super(name, description, link, date);
 		id = count.incrementAndGet();
 		this.continent = continent;

@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Location extends Entity {
@@ -11,7 +12,7 @@ public class Location extends Entity {
 		id = count.incrementAndGet();
 	}
 
-	public Location(String name, String description, String link, String date) {
+	public Location(String name, String description, String link, Date date) {
 		super(name, description, link, date);
 		id = count.incrementAndGet();
 	}

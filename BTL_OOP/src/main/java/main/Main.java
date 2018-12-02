@@ -21,8 +21,8 @@ import model.Time;
 public class Main {
 	public static void main(String[] args) {
 
-		int numberOfEntity = 1000000;
-		int numberOfRelationship = 2000;
+		int numberOfEntity = 100;
+		int numberOfRelationship = 200;
 		
 		CreateRandomEntity cre = new CreateRandomEntity();
 //		long start1 = System.currentTimeMillis();
@@ -107,18 +107,18 @@ public class Main {
 		
 		long end = System.currentTimeMillis();
 		System.out.println("End - start = " + (end - start));
-		System.exit(1);
+//		System.exit(1);
 //	
-//		/*============== Insert Data Relationship ===================*/
-//		Random rd = new Random();
-//		for (int i = 0; i < numberOfRelationship; i++)
-//		{
-//			Entity entity1 = listEntity.get(rd.nextInt(numberOfEntity));
-//			Entity entity2 = listEntity.get(rd.nextInt(numberOfEntity));
-//			String strRelationship = listRelationship.get(rd.nextInt(numberOfRelationship));
-//			createIRIStatement.createIRIRelationship(entity1, entity2, strRelationship);
-//		}
-//		end = System.currentTimeMillis();
+		/*============== Insert Data Relationship ===================*/
+		Random rd = new Random();
+		for (int i = 0; i < numberOfRelationship; i++)
+		{
+			Entity entity1 = listEntity.get(rd.nextInt(numberOfEntity));
+			Entity entity2 = listEntity.get(rd.nextInt(numberOfEntity));
+			String strRelationship = listRelationship.get(rd.nextInt(numberOfRelationship));
+			createIRIStatement.createIRIRelationship(entity1, entity2, strRelationship);
+		}
+		end = System.currentTimeMillis();
 		
 		
 		/*============== Query Data ===================*/

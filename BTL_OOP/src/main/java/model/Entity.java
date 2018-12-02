@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Entity {
@@ -8,14 +9,14 @@ public class Entity {
 	protected String name;
 	protected String description;
 	protected String link;
-	protected String date;
+	protected Date date;
 	
 	public Entity() {
 		super();
 //		id = count.incrementAndGet();
 	}
 
-	public Entity(String name, String description, String link, String date) {
+	public Entity(String name, String description, String link, Date date) {
 		super();
 //		this.id = count.incrementAndGet();
 		this.name = name;
@@ -52,11 +53,11 @@ public class Entity {
 		this.link = link;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 

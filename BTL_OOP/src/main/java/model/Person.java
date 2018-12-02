@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Person extends Entity {
@@ -12,7 +13,7 @@ public class Person extends Entity {
 		id = count.incrementAndGet();
 	}
 
-	public Person(String name, String description, String link, String date, String job) {
+	public Person(String name, String description, String link, Date date, String job) {
 		super(name, description, link, date);
 		this.job = job;
 		id = count.incrementAndGet();
