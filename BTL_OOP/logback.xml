@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration>
+
+	<appender name="logFileAppender" class="ch.qos.logback.core.FileAppender">
+	<file>D:\CODE\BTL_OOP\logback.log</file>
+	<append>true</append>
+	  <encoder>
+	    <pattern>%d [%thread] %-5level %logger{35} - %msg%n</pattern>
+	  </encoder>
+	</appender>
+	
+	<root level="INFO">
+	 <appender-ref ref="logFileAppender" />
+	</root>
+
+</configuration>
