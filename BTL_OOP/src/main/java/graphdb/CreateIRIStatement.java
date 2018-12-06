@@ -109,7 +109,7 @@ public class CreateIRIStatement extends IRIConstant {
 			}
 			
 			conn.add(model);
-			
+			model.clear();
 		}
 		catch (Exception Ex)
 		{
@@ -162,7 +162,7 @@ public class CreateIRIStatement extends IRIConstant {
 			}
 			
 			conn.add(model);
-			
+			model.clear();
 		}
 		catch (Exception Ex)
 		{
@@ -210,7 +210,7 @@ public class CreateIRIStatement extends IRIConstant {
 			}
 			
 			conn.add(model);
-			
+			model.clear();
 		}
 		catch (Exception Ex)
 		{
@@ -258,7 +258,7 @@ public class CreateIRIStatement extends IRIConstant {
 			}
 			
 			conn.add(model);
-			
+			model.clear();
 		}
 		catch (Exception Ex)
 		{
@@ -311,7 +311,7 @@ public class CreateIRIStatement extends IRIConstant {
 			}
 			
 			conn.add(model);
-
+			model.clear();
 		}
 		catch (Exception Ex)
 		{
@@ -359,7 +359,7 @@ public class CreateIRIStatement extends IRIConstant {
 			}
 			
 			conn.add(model);
-
+			model.clear();
 		}
 		catch (Exception Ex)
 		{
@@ -372,8 +372,6 @@ public class CreateIRIStatement extends IRIConstant {
 									ArrayList<Country>listCountry, ArrayList<Event>listEvent,
 									ArrayList<Location>listLocation, ArrayList<Organization>listOrganization, ArrayList<Time>listTime)
 	{
-		Random rd = new Random();
-		int temp = 0;
 		int listPersonSize  	 = listPerson.size();
 		int listCountrySize 	 = listCountry.size();
 		int listEventSize   	 = listEvent.size();
@@ -414,17 +412,20 @@ public class CreateIRIStatement extends IRIConstant {
 		int listRelationEventTimeSize		   = listRelationEventTime.size();
 		int listRelationEventCountrySize       = listRelationEventCountry.size();
 		
+		Random rd = new Random();
+		int temp = 0;
+		
 		for (int i = 0; i < numberOfRelationship; i++)
 		{
-			temp = rd.nextInt(19);
-			if(temp == 0)
+//			temp = rd.nextInt(19);
+//			if(temp == 0)
 			{
 				createIRIRelationPersonPerson(
 						listPerson.get(rd.nextInt(listPersonSize)),
 						listPerson.get(rd.nextInt(listPersonSize)),
 						listRelationPersonPerson.get(rd.nextInt(listRelationPersonPersonSize)));
 			}
-			else if(temp == 1)
+//			else if(temp == 1)
 			{
 				createIRIRelationPersonEvent(
 						listPerson.get(rd.nextInt(listPersonSize)), 
@@ -435,7 +436,7 @@ public class CreateIRIStatement extends IRIConstant {
 						listPerson.get(rd.nextInt(listPersonSize)),
 						listRelationEventPerson.get(rd.nextInt(listRelationEventPersonSize)));
 			}
-			else if(temp == 2)
+//			else if(temp == 2)
 			{
 				createIRIRelationPersonLocation(
 						listPerson.get(rd.nextInt(listPersonSize)),
@@ -446,7 +447,7 @@ public class CreateIRIStatement extends IRIConstant {
 						listPerson.get(rd.nextInt(listPersonSize)),
 						listRelationLocationPerson.get(rd.nextInt(listRelationLocationPersonSize)));
 			}
-			else if(temp == 3)
+//			else if(temp == 3)
 			{
 				createIRIRelationPersonOrganization(
 						listPerson.get(rd.nextInt(listPersonSize)),
@@ -457,7 +458,7 @@ public class CreateIRIStatement extends IRIConstant {
 						listPerson.get(rd.nextInt(listPersonSize)),
 						listRelationOrganizationPerson.get(rd.nextInt(listRelationOrganizationPersonSize)));
 			}
-			else if(temp == 4)
+//			else if(temp == 4)
 			{
 				createIRIRelationPersonTime(
 						listPerson.get(rd.nextInt(listPersonSize)),
@@ -465,7 +466,7 @@ public class CreateIRIStatement extends IRIConstant {
 						listRelationPersonTime.get(rd.nextInt(listRelationPersonTimeSize)));
 				
 			}
-			else if(temp == 5)
+//			else if(temp == 5)
 			{
 				createIRIRelationPersonCountry(
 						listPerson.get(rd.nextInt(listPersonSize)),
@@ -477,7 +478,7 @@ public class CreateIRIStatement extends IRIConstant {
 						listRelationCountryPerson.get(rd.nextInt(listRelationCountryPersonSize)));
 				
 			}
-			else if(temp == 6)
+//			else if(temp == 6)
 			{
 				createIRIRelationEventEvent(
 						listEvent.get(rd.nextInt(listEventSize)),
@@ -485,14 +486,14 @@ public class CreateIRIStatement extends IRIConstant {
 						listRelationEventEvent.get(rd.nextInt(listRelationEventEventSize)));
 				
 			}
-			else if(temp == 7)
+//			else if(temp == 7)
 			{
 				createIRIRelationEventLocation(
 						listEvent.get(rd.nextInt(listEventSize)), 
 						listLocation.get(rd.nextInt(listLocationSize)), 
 						listRelationEventLocation.get(rd.nextInt(listRelationEventLocationSize)));
 			}
-			else if(temp == 8)
+//			else if(temp == 8)
 			{
 				createIRIRelationEventOrganization(
 						listEvent.get(rd.nextInt(listEvent.size())), 
@@ -503,14 +504,14 @@ public class CreateIRIStatement extends IRIConstant {
 						listEvent.get(rd.nextInt(listEvent.size())), 
 						listRelationOrganizationEvent.get(rd.nextInt(listRelationOrganizationEventSize)));
 			}
-			else if(temp == 9)
+//			else if(temp == 9)
 			{
 				createIRIRelationEventTime(
 						listEvent.get(rd.nextInt(listEventSize)), 
 						listTime.get(rd.nextInt(listTimeSize)), 
 						listRelationEventTime.get(rd.nextInt(listRelationEventTimeSize)));
 			}
-			else if(temp == 10)
+//			else if(temp == 10)
 			{
 				createIRIRelationEventCountry(
 						listEvent.get(rd.nextInt(listEventSize)), 
@@ -521,14 +522,14 @@ public class CreateIRIStatement extends IRIConstant {
 						listEvent.get(rd.nextInt(listEventSize)), 
 						listRelationCountryEvent.get(rd.nextInt(listRelationCountryEventSize)));
 			}
-			else if(temp == 11)
+//			else if(temp == 11)
 			{
 				createIRIRelationLocationLocation(
 						listLocation.get(rd.nextInt(listLocationSize)), 
 						listLocation.get(rd.nextInt(listLocationSize)), 
 						listRelationLocationLocation.get(rd.nextInt(listRelationLocationLocationSize)));
 			}
-			else if(temp == 12)
+//			else if(temp == 12)
 			{
 				createIRIRelationLocationOrganization(
 						listLocation.get(rd.nextInt(listLocationSize)), 
@@ -539,14 +540,14 @@ public class CreateIRIStatement extends IRIConstant {
 						listLocation.get(rd.nextInt(listLocationSize)), 
 						listRelationOrganizationLocation.get(rd.nextInt(listRelationOrganizationLocationSize)));
 			}
-			else if(temp == 13)
+//			else if(temp == 13)
 			{
 				createIRIRelationLocationTime(
 						listLocation.get(rd.nextInt(listLocationSize)), 
 						listTime.get(rd.nextInt(listTimeSize)), 
 						listRelationLocationTime.get(rd.nextInt(listRelationLocationTimeSize)));
 			}
-			else if(temp == 14)
+//			else if(temp == 14)
 			{
 				createIRIRelationLocationCountry(
 						listLocation.get(rd.nextInt(listLocationSize)), 
@@ -557,14 +558,14 @@ public class CreateIRIStatement extends IRIConstant {
 						listLocation.get(rd.nextInt(listLocationSize)), 
 						listRelationCountryLocation.get(rd.nextInt(listRelationCountryLocationSize)));
 			}
-			else if(temp == 15)
+//			else if(temp == 15)
 			{
 				createIRIRelationOrganizationTime(
 						listOrganization.get(rd.nextInt(listOrganizationSize)), 
 						listTime.get(rd.nextInt(listTimeSize)), 
 						listRelationOrganizationTime.get(rd.nextInt(listRelationOrganizationTimeSize)));
 			}
-			else if(temp == 16)
+//			else if(temp == 16)
 			{
 				createIRIRelationOrganizationCountry(
 						listOrganization.get(rd.nextInt(listOrganizationSize)), 
@@ -575,14 +576,14 @@ public class CreateIRIStatement extends IRIConstant {
 						listOrganization.get(rd.nextInt(listOrganizationSize)), 
 						listRelationCountryOrganization.get(rd.nextInt(listRelationCountryOrganizationSize)));
 			}
-			else if(temp == 17)
+//			else if(temp == 17)
 			{
 				createIRIRelationCountryCountry(
 						listCountry.get(rd.nextInt(listCountrySize)), 
 						listCountry.get(rd.nextInt(listCountrySize)), 
 						listRelationCountryCountry.get(rd.nextInt(listRelationCountryCountrySize)));
 			}
-			else if(temp == 18)
+//			else if(temp == 18)
 			{
 				createIRIRelationCountryTime(
 						listCountry.get(rd.nextInt(listCountrySize)),
@@ -596,6 +597,7 @@ public class CreateIRIStatement extends IRIConstant {
 			}
 		}
 		conn.add(model);
+		model.clear();
 	}
 	
 	
@@ -604,9 +606,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriPerson(person, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriOrganization(organization, valueFactory);
+		subject   = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -615,9 +617,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriPerson(person, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriCountry(country, valueFactory);
+		subject   = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -626,9 +628,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriPerson(person, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriEvent(event, valueFactory);
+		subject   = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -637,9 +639,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriPerson(person, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriLocation(location, valueFactory);
+		subject   = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -648,9 +650,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriPerson(person1, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriPerson(person2, valueFactory);
+		subject   = valueFactory.createIRI(PERSON.toString(), "/person" + person1.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(PERSON.toString(), "/person" + person2.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -659,9 +661,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriPerson(person, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriTime(time, valueFactory);
+		subject   = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(TIME.toString(), "/time" + time.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -671,9 +673,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriCountry(country1, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriCountry(country2, valueFactory);
+		subject   = valueFactory.createIRI(COUNTRY.toString(), "/country" + country1.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(COUNTRY.toString(), "/country" + country2.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -682,9 +684,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriCountry(country, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriOrganization(organization, valueFactory);
+		subject   = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -693,9 +695,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriCountry(country, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriTime(time, valueFactory);
+		subject   = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(TIME.toString(), "/time" + time.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -704,9 +706,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriCountry(country, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriPerson(person, valueFactory);
+		subject   = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -715,9 +717,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriCountry(country, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriLocation(location, valueFactory);
+		subject   = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -726,9 +728,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriCountry(country, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriEvent(event, valueFactory);
+		subject   = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -738,9 +740,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriEvent(event, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriPerson(person, valueFactory);
+		subject   = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -749,9 +751,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriEvent(event, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriCountry(country, valueFactory);
+		subject   = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -760,9 +762,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriEvent(event1, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriEvent(event2, valueFactory);
+		subject   = valueFactory.createIRI(EVENT.toString(), "/event" + event1.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(EVENT.toString(), "/event" + event2.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -771,9 +773,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriEvent(event, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriOrganization(organization, valueFactory);
+		subject   = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -782,9 +784,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriEvent(event, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriTime(time, valueFactory);
+		subject   = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(TIME.toString(), "/time" + time.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -793,9 +795,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriEvent(event, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriLocation(location, valueFactory);
+		subject   = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -805,9 +807,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriLocation(location, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriPerson(person, valueFactory);
+		subject   = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -816,9 +818,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriLocation(location, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriCountry(country, valueFactory);
+		subject   = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -827,9 +829,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriLocation(location, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriOrganization(organization, valueFactory);
+		subject   = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -838,9 +840,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriLocation(location, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriTime(time, valueFactory);
+		subject   = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(TIME.toString(), "/time" + time.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -849,9 +851,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriLocation(location1, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriLocation(location2, valueFactory);
+		subject   = valueFactory.createIRI(LOCATION.toString(), "/location" + location1.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(LOCATION.toString(), "/location" + location2.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -861,9 +863,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriOrganization(organization, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriPerson(person, valueFactory);
+		subject   = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -872,9 +874,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriOrganization(organization, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriLocation(location, valueFactory);
+		subject   = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -883,9 +885,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriOrganization(organization, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriEvent(event, valueFactory);
+		subject   = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -894,9 +896,9 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriOrganization(organization, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriCountry(country, valueFactory);
+		subject   = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
 		
 		model.add(subject, predicate, object);
 	}
@@ -905,40 +907,10 @@ public class CreateIRIStatement extends IRIConstant {
 		ValueFactory valueFactory = conn.getValueFactory();
 		IRI subject, predicate, object;
 		
-		subject   = iriOrganization(organization, valueFactory);
-		predicate = iriRelation(relation, valueFactory);
-		object    = iriTime(time, valueFactory);
+		subject   = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
+		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+		object    = valueFactory.createIRI(TIME.toString(), "/time" + time.getId());
 		
 		model.add(subject, predicate, object);
-	}
-
-	
-	private IRI iriPerson(Person person, ValueFactory valueFactory)
-	{
-		return valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
-	}
-	private IRI iriCountry(Country country, ValueFactory valueFactory)
-	{
-		return valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
-	}
-	private IRI iriEvent(Event event, ValueFactory valueFactory)
-	{
-		return valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
-	}
-	private IRI iriLocation(Location location, ValueFactory valueFactory)
-	{
-		return valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
-	}
-	private IRI iriOrganization(Organization organization, ValueFactory valueFactory)
-	{
-		return valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
-	}
-	private IRI iriTime(Time time, ValueFactory valueFactory)
-	{
-		return valueFactory.createIRI(TIME.toString(), "/time" + time.getId());
-	}
-	private IRI iriRelation(String relation, ValueFactory valueFactory)
-	{
-		return valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
 	}
 }
