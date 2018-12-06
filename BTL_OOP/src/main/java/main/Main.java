@@ -81,12 +81,13 @@ public class Main {
 		long start = System.currentTimeMillis();
 		
 		/*==============Upload Entity data to server=========*/
-		createIRIStatement.createIRIPerson(listPerson);
-		createIRIStatement.createIRICountry(listCountry);
-		createIRIStatement.createIRIEvent(listEvent);
-		createIRIStatement.createIRILocation(listLocation);
-		createIRIStatement.createIRIOrganization(listOrganization);
-		createIRIStatement.createIRITime(listTime);
+//		createIRIStatement.createIRIPerson(listPerson);
+//		createIRIStatement.createIRICountry(listCountry);
+//		createIRIStatement.createIRIEvent(listEvent);
+//		createIRIStatement.createIRILocation(listLocation);
+//		createIRIStatement.createIRIOrganization(listOrganization);
+//		createIRIStatement.createIRITime(listTime);
+		System.gc();
 		
 		// Show number of each Entity
 		System.out.println(listPerson.size());

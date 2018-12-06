@@ -22,6 +22,8 @@ import model.Time;
 public class CreateIRIStatement extends IRIConstant {
 	private static RepositoryConnection conn = Connection.getRepositoryConnection();
 	Model model = new TreeModel();
+	ValueFactory valueFactory = conn.getValueFactory();
+	IRI subject, predicate, object;
 	CreateRandomEntity cre = new CreateRandomEntity();
 	
 	private ArrayList<String> listRelationPersonCountry        = cre.getListRelationPersonCountry();
@@ -57,6 +59,39 @@ public class CreateIRIStatement extends IRIConstant {
 	private ArrayList<String> listRelationCountryOrganization  = cre.getListRelationCountryOrganization();
 	private ArrayList<String> listRelationCountryLocation      = cre.getListRelationCountryLocation();
 	
+	int listRelationPersonPersonSize   	   = listRelationPersonPerson.size();
+	int listRelationPersonLocationSize 	   = listRelationPersonLocation.size();
+	int listRelationPersonOrganizationSize = listRelationPersonOrganization.size();
+	int listRelationPersonTimeSize		   = listRelationPersonTime.size();
+	int listRelationPersonCountrySize      = listRelationPersonCountry.size();
+	int listRelationPersonEventSize        = listRelationPersonEvent.size();
+	
+	int listRelationCountryPersonSize       = listRelationCountryPerson.size();
+	int listRelationCountryEventSize        = listRelationCountryEvent.size();
+	int listRelationCountryLocationSize     = listRelationCountryLocation.size();
+	int listRelationCountryOrganizationSize = listRelationCountryOrganization.size();
+	int listRelationCountryCountrySize      = listRelationCountryCountry.size();
+	int listRelationCountryTimeSize         = listRelationCountryTime.size();
+	
+	int listRelationOrganizationPersonSize   = listRelationOrganizationPerson.size();
+	int listRelationOrganizationEventSize    = listRelationOrganizationEvent.size();
+	int listRelationOrganizationLocationSize = listRelationOrganizationLocation.size();
+	int listRelationOrganizationTimeSize	 = listRelationOrganizationTime.size();
+	int listRelationOrganizationCountrySize  = listRelationOrganizationCountry.size();
+	
+	int listRelationLocationPersonSize       = listRelationLocationPerson.size();
+	int listRelationLocationLocationSize     = listRelationLocationLocation.size();
+	int listRelationLocationOrganizationSize = listRelationLocationOrganization.size();
+	int listRelationLocationTimeSize		 = listRelationLocationTime.size();
+	int listRelationLocationCountrySize      = listRelationLocationCountry.size();
+	
+	int listRelationEventPersonSize    	   = listRelationEventPerson.size();
+	int listRelationEventEventSize         = listRelationEventEvent.size();
+	int listRelationEventLocationSize      = listRelationEventLocation.size();
+	int listRelationEventOrganizationSize  = listRelationEventOrganization.size();
+	int listRelationEventTimeSize		   = listRelationEventTime.size();
+	int listRelationEventCountrySize       = listRelationEventCountry.size();
+	
 	public CreateIRIStatement()
 	{
 		super();
@@ -65,11 +100,8 @@ public class CreateIRIStatement extends IRIConstant {
 	// Create IRI and upload Entity
 	public void createIRIPerson(ArrayList<Person> listPerson)
 	{
-		Model model = new TreeModel();
 		try
 		{
-			ValueFactory valueFactory = conn.getValueFactory();
-			IRI subject, predicate;
 			Literal object;
 			
 			for(Person person : listPerson)
@@ -118,11 +150,8 @@ public class CreateIRIStatement extends IRIConstant {
 	}
 	public void createIRICountry(ArrayList<Country> listCountry)
 	{
-		Model model = new TreeModel();
 		try
 		{
-			ValueFactory valueFactory = conn.getValueFactory();
-			IRI subject, predicate;
 			Literal object;
 			
 			for (Country country : listCountry)
@@ -171,11 +200,8 @@ public class CreateIRIStatement extends IRIConstant {
 	}
 	public void createIRIEvent(ArrayList<Event> listEvent)
 	{
-		Model model = new TreeModel();
 		try
 		{
-			ValueFactory valueFactory = conn.getValueFactory();
-			IRI subject, predicate;
 			Literal object;
 			
 			for(Event event : listEvent)
@@ -219,11 +245,8 @@ public class CreateIRIStatement extends IRIConstant {
 	}
 	public void createIRILocation(ArrayList<Location> listLocation)
 	{
-		Model model = new TreeModel();
 		try
 		{
-			ValueFactory valueFactory = conn.getValueFactory();
-			IRI subject, predicate;
 			Literal object;
 			
 			for(Location location : listLocation)
@@ -267,11 +290,8 @@ public class CreateIRIStatement extends IRIConstant {
 	}
 	public void createIRIOrganization(ArrayList<Organization> listOrganization)
 	{
-		Model model = new TreeModel();
 		try
 		{
-			ValueFactory valueFactory = conn.getValueFactory();
-			IRI subject, predicate;
 			Literal object;
 			
 			for(Organization organization : listOrganization)
@@ -320,11 +340,8 @@ public class CreateIRIStatement extends IRIConstant {
 	}
 	public void createIRITime(ArrayList<Time> listTime)
 	{
-		Model model = new TreeModel();
 		try
 		{
-			ValueFactory valueFactory = conn.getValueFactory();
-			IRI subject, predicate;
 			Literal object;
 			
 			for(Time time : listTime)
@@ -379,39 +396,6 @@ public class CreateIRIStatement extends IRIConstant {
 		int listOrganizationSize = listOrganization.size();
 		int listTimeSize         = listTime.size();
 		
-		int listRelationPersonPersonSize   	   = listRelationPersonPerson.size();
-		int listRelationPersonLocationSize 	   = listRelationPersonLocation.size();
-		int listRelationPersonOrganizationSize = listRelationPersonOrganization.size();
-		int listRelationPersonTimeSize		   = listRelationPersonTime.size();
-		int listRelationPersonCountrySize      = listRelationPersonCountry.size();
-		int listRelationPersonEventSize        = listRelationPersonEvent.size();
-		
-		int listRelationCountryPersonSize       = listRelationCountryPerson.size();
-		int listRelationCountryEventSize        = listRelationCountryEvent.size();
-		int listRelationCountryLocationSize     = listRelationCountryLocation.size();
-		int listRelationCountryOrganizationSize = listRelationCountryOrganization.size();
-		int listRelationCountryCountrySize      = listRelationCountryCountry.size();
-		int listRelationCountryTimeSize         = listRelationCountryTime.size();
-		
-		int listRelationOrganizationPersonSize   = listRelationOrganizationPerson.size();
-		int listRelationOrganizationEventSize    = listRelationOrganizationEvent.size();
-		int listRelationOrganizationLocationSize = listRelationOrganizationLocation.size();
-		int listRelationOrganizationTimeSize	 = listRelationOrganizationTime.size();
-		int listRelationOrganizationCountrySize  = listRelationOrganizationCountry.size();
-		
-		int listRelationLocationPersonSize       = listRelationLocationPerson.size();
-		int listRelationLocationLocationSize     = listRelationLocationLocation.size();
-		int listRelationLocationOrganizationSize = listRelationLocationOrganization.size();
-		int listRelationLocationTimeSize		 = listRelationLocationTime.size();
-		int listRelationLocationCountrySize      = listRelationLocationCountry.size();
-		
-		int listRelationEventPersonSize    	   = listRelationEventPerson.size();
-		int listRelationEventEventSize         = listRelationEventEvent.size();
-		int listRelationEventLocationSize      = listRelationEventLocation.size();
-		int listRelationEventOrganizationSize  = listRelationEventOrganization.size();
-		int listRelationEventTimeSize		   = listRelationEventTime.size();
-		int listRelationEventCountrySize       = listRelationEventCountry.size();
-		
 		Random rd = new Random();
 		int temp = 0;
 		
@@ -420,497 +404,293 @@ public class CreateIRIStatement extends IRIConstant {
 //			temp = rd.nextInt(19);
 //			if(temp == 0)
 			{
-				createIRIRelationPersonPerson(
-						listPerson.get(rd.nextInt(listPersonSize)),
-						listPerson.get(rd.nextInt(listPersonSize)),
-						listRelationPersonPerson.get(rd.nextInt(listRelationPersonPersonSize)));
+				Person person1  = listPerson.get(rd.nextInt(listPersonSize));
+				Person person2  = listPerson.get(rd.nextInt(listPersonSize));
+				String relation = listRelationPersonPerson.get(rd.nextInt(listRelationPersonPersonSize));
+				
+				subject   = valueFactory.createIRI(PERSON.toString(), "/person" + person1.getId());
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(PERSON.toString(), "/person" + person2.getId());
+				model.add(subject, predicate, object);
 			}
 //			else if(temp == 1)
 			{
-				createIRIRelationPersonEvent(
-						listPerson.get(rd.nextInt(listPersonSize)), 
-						listEvent.get(rd.nextInt(listEventSize)),
-						listRelationPersonEvent.get(rd.nextInt(listRelationPersonEventSize)));
-				createIRIRelationEventPerson(
-						listEvent.get(rd.nextInt(listEventSize)),
-						listPerson.get(rd.nextInt(listPersonSize)),
-						listRelationEventPerson.get(rd.nextInt(listRelationEventPersonSize)));
+				Person person   = listPerson.get(rd.nextInt(listPersonSize));
+				Event event     = listEvent.get(rd.nextInt(listEventSize));
+				String relation = listRelationPersonEvent.get(rd.nextInt(listRelationPersonEventSize));
+				
+				subject   = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
+				model.add(subject, predicate, object);
+
+				subject   = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
+				relation  = listRelationEventPerson.get(rd.nextInt(listRelationEventPersonSize));
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
+				model.add(subject, predicate, object);
+
 			}
 //			else if(temp == 2)
 			{
-				createIRIRelationPersonLocation(
-						listPerson.get(rd.nextInt(listPersonSize)),
-						listLocation.get(rd.nextInt(listLocationSize)),
-						listRelationPersonLocation.get(rd.nextInt(listRelationPersonLocationSize)));
-				createIRIRelationLocationPerson(
-						listLocation.get(rd.nextInt(listLocationSize)),
-						listPerson.get(rd.nextInt(listPersonSize)),
-						listRelationLocationPerson.get(rd.nextInt(listRelationLocationPersonSize)));
+				Person person     = listPerson.get(rd.nextInt(listPersonSize));
+				Location location = listLocation.get(rd.nextInt(listLocationSize));
+				String relation   = listRelationPersonLocation.get(rd.nextInt(listRelationPersonLocationSize));
+				
+				subject   = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
+				model.add(subject, predicate, object);
+				
+				subject   = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
+				relation  = listRelationLocationPerson.get(rd.nextInt(listRelationLocationPersonSize));
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
+				model.add(subject, predicate, object);
+				
 			}
 //			else if(temp == 3)
 			{
-				createIRIRelationPersonOrganization(
-						listPerson.get(rd.nextInt(listPersonSize)),
-						listOrganization.get(rd.nextInt(listOrganizationSize)),
-						listRelationPersonOrganization.get(rd.nextInt(listRelationPersonOrganizationSize)));
-				createIRIRelationOrganizationPerson(
-						listOrganization.get(rd.nextInt(listOrganizationSize)),
-						listPerson.get(rd.nextInt(listPersonSize)),
-						listRelationOrganizationPerson.get(rd.nextInt(listRelationOrganizationPersonSize)));
+				Person person             = listPerson.get(rd.nextInt(listPersonSize));
+				Organization organization = listOrganization.get(rd.nextInt(listOrganizationSize));
+				String relation           = listRelationPersonOrganization.get(rd.nextInt(listRelationPersonOrganizationSize));
+				
+				subject   = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
+				model.add(subject, predicate, object);
+				
+				subject   = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
+				relation  = listRelationOrganizationPerson.get(rd.nextInt(listRelationOrganizationPersonSize));
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
+				model.add(subject, predicate, object);
+
 			}
 //			else if(temp == 4)
 			{
-				createIRIRelationPersonTime(
-						listPerson.get(rd.nextInt(listPersonSize)),
-						listTime.get(rd.nextInt(listTimeSize)),
-						listRelationPersonTime.get(rd.nextInt(listRelationPersonTimeSize)));
+				Person person   = listPerson.get(rd.nextInt(listPersonSize));
+				Time time       = listTime.get(rd.nextInt(listTimeSize));
+				String relation = listRelationPersonTime.get(rd.nextInt(listRelationPersonTimeSize));
+						
+				subject   = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(TIME.toString(), "/time" + time.getId());
+				model.add(subject, predicate, object);
 				
 			}
 //			else if(temp == 5)
 			{
-				createIRIRelationPersonCountry(
-						listPerson.get(rd.nextInt(listPersonSize)),
-						listCountry.get(rd.nextInt(listCountrySize)),
-						listRelationPersonCountry.get(rd.nextInt(listRelationPersonCountrySize)));
-				createIRIRelationCountryPerson(
-						listCountry.get(rd.nextInt(listCountrySize)),
-						listPerson.get(rd.nextInt(listPersonSize)),
-						listRelationCountryPerson.get(rd.nextInt(listRelationCountryPersonSize)));
+				Person person   = listPerson.get(rd.nextInt(listPersonSize));
+				Country country = listCountry.get(rd.nextInt(listCountrySize));
+				String relation = listRelationPersonCountry.get(rd.nextInt(listRelationPersonCountrySize));
+				
+				subject   = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
+				model.add(subject, predicate, object);
+
+				subject   = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
+				relation  = listRelationCountryPerson.get(rd.nextInt(listRelationCountryPersonSize));
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
+				model.add(subject, predicate, object);
 				
 			}
 //			else if(temp == 6)
 			{
-				createIRIRelationEventEvent(
-						listEvent.get(rd.nextInt(listEventSize)),
-						listEvent.get(rd.nextInt(listEventSize)),
-						listRelationEventEvent.get(rd.nextInt(listRelationEventEventSize)));
+				Event event1    = listEvent.get(rd.nextInt(listEventSize));
+				Event event2    = listEvent.get(rd.nextInt(listEventSize));
+				String relation = listRelationEventEvent.get(rd.nextInt(listRelationEventEventSize));
+
+				subject   = valueFactory.createIRI(EVENT.toString(), "/event" + event1.getId());
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(EVENT.toString(), "/event" + event2.getId());
+				model.add(subject, predicate, object);
 				
 			}
 //			else if(temp == 7)
 			{
-				createIRIRelationEventLocation(
-						listEvent.get(rd.nextInt(listEventSize)), 
-						listLocation.get(rd.nextInt(listLocationSize)), 
-						listRelationEventLocation.get(rd.nextInt(listRelationEventLocationSize)));
+				Event event       = listEvent.get(rd.nextInt(listEventSize));
+				Location location = listLocation.get(rd.nextInt(listLocationSize));
+				String relation   = listRelationEventLocation.get(rd.nextInt(listRelationEventLocationSize));
+						
+				subject   = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
+				model.add(subject, predicate, object);
+						
 			}
 //			else if(temp == 8)
 			{
-				createIRIRelationEventOrganization(
-						listEvent.get(rd.nextInt(listEvent.size())), 
-						listOrganization.get(rd.nextInt(listOrganizationSize)), 
-						listRelationEventOrganization.get(rd.nextInt(listRelationEventOrganizationSize)));
-				createIRIRelationOrganizationEvent(
-						listOrganization.get(rd.nextInt(listOrganizationSize)), 
-						listEvent.get(rd.nextInt(listEvent.size())), 
-						listRelationOrganizationEvent.get(rd.nextInt(listRelationOrganizationEventSize)));
+				Event event               = listEvent.get(rd.nextInt(listEventSize));
+				Organization organization = listOrganization.get(rd.nextInt(listOrganizationSize));
+				String relation           = listRelationEventOrganization.get(rd.nextInt(listRelationEventOrganizationSize));
+				
+				subject   = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
+				model.add(subject, predicate, object);
+				
+				subject   = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
+				relation  = listRelationOrganizationEvent.get(rd.nextInt(listRelationOrganizationEventSize));
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
+				model.add(subject, predicate, object);
+
 			}
 //			else if(temp == 9)
 			{
-				createIRIRelationEventTime(
-						listEvent.get(rd.nextInt(listEventSize)), 
-						listTime.get(rd.nextInt(listTimeSize)), 
-						listRelationEventTime.get(rd.nextInt(listRelationEventTimeSize)));
+				Event event     = listEvent.get(rd.nextInt(listEventSize));
+				Time time       = listTime.get(rd.nextInt(listTimeSize));
+				String relation = listRelationEventTime.get(rd.nextInt(listRelationEventTimeSize));
+				
+				subject   = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(TIME.toString(), "/time" + time.getId());
+				model.add(subject, predicate, object);
+
 			}
 //			else if(temp == 10)
 			{
-				createIRIRelationEventCountry(
-						listEvent.get(rd.nextInt(listEventSize)), 
-						listCountry.get(rd.nextInt(listCountrySize)), 
-						listRelationEventCountry.get(rd.nextInt(listRelationEventCountrySize)));
-				createIRIRelationCountryEvent(
-						listCountry.get(rd.nextInt(listCountrySize)), 
-						listEvent.get(rd.nextInt(listEventSize)), 
-						listRelationCountryEvent.get(rd.nextInt(listRelationCountryEventSize)));
+				Event event     = listEvent.get(rd.nextInt(listEventSize));
+				Country country = listCountry.get(rd.nextInt(listCountrySize));
+				String relation = listRelationEventCountry.get(rd.nextInt(listRelationEventCountrySize));
+				
+				subject   = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
+				model.add(subject, predicate, object);
+				
+				subject   = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
+				relation  = listRelationCountryEvent.get(rd.nextInt(listRelationCountryEventSize));
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
+				model.add(subject, predicate, object);
+
 			}
 //			else if(temp == 11)
 			{
-				createIRIRelationLocationLocation(
-						listLocation.get(rd.nextInt(listLocationSize)), 
-						listLocation.get(rd.nextInt(listLocationSize)), 
-						listRelationLocationLocation.get(rd.nextInt(listRelationLocationLocationSize)));
+				Location location1 = listLocation.get(rd.nextInt(listLocationSize));
+				Location location2 = listLocation.get(rd.nextInt(listLocationSize));
+				String relation    = listRelationLocationLocation.get(rd.nextInt(listRelationLocationLocationSize));
+				
+				subject   = valueFactory.createIRI(LOCATION.toString(), "/location" + location1.getId());
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(LOCATION.toString(), "/location" + location2.getId());
+				model.add(subject, predicate, object);
+
 			}
 //			else if(temp == 12)
 			{
-				createIRIRelationLocationOrganization(
-						listLocation.get(rd.nextInt(listLocationSize)), 
-						listOrganization.get(rd.nextInt(listOrganizationSize)),
-						listRelationLocationOrganization.get(rd.nextInt(listRelationLocationOrganizationSize)));
-				createIRIRelationOrganizationLocation(
-						listOrganization.get(rd.nextInt(listOrganizationSize)), 
-						listLocation.get(rd.nextInt(listLocationSize)), 
-						listRelationOrganizationLocation.get(rd.nextInt(listRelationOrganizationLocationSize)));
+				Location location         = listLocation.get(rd.nextInt(listLocationSize));
+				Organization organization = listOrganization.get(rd.nextInt(listOrganizationSize));
+				String relation           = listRelationLocationOrganization.get(rd.nextInt(listRelationLocationOrganizationSize));
+				
+				subject   = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
+				model.add(subject, predicate, object);
+				
+				subject   = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
+				relation  = listRelationOrganizationLocation.get(rd.nextInt(listRelationOrganizationLocationSize));
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());				
+				model.add(subject, predicate, object);
+
 			}
 //			else if(temp == 13)
 			{
-				createIRIRelationLocationTime(
-						listLocation.get(rd.nextInt(listLocationSize)), 
-						listTime.get(rd.nextInt(listTimeSize)), 
-						listRelationLocationTime.get(rd.nextInt(listRelationLocationTimeSize)));
+				Location location = listLocation.get(rd.nextInt(listLocationSize));
+				Time time         = listTime.get(rd.nextInt(listTimeSize));
+				String relation   = listRelationLocationTime.get(rd.nextInt(listRelationLocationTimeSize));
+				
+				subject   = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(TIME.toString(), "/time" + time.getId());
+				model.add(subject, predicate, object);
+
 			}
 //			else if(temp == 14)
 			{
-				createIRIRelationLocationCountry(
-						listLocation.get(rd.nextInt(listLocationSize)), 
-						listCountry.get(rd.nextInt(listCountrySize)), 
-						listRelationLocationCountry.get(rd.nextInt(listRelationLocationCountrySize)));
-				createIRIRelationCountryLocation(
-						listCountry.get(rd.nextInt(listCountrySize)), 
-						listLocation.get(rd.nextInt(listLocationSize)), 
-						listRelationCountryLocation.get(rd.nextInt(listRelationCountryLocationSize)));
+				Location location = listLocation.get(rd.nextInt(listLocationSize));
+				Country country   = listCountry.get(rd.nextInt(listCountrySize));
+				String relation   = listRelationLocationCountry.get(rd.nextInt(listRelationLocationCountrySize));
+				
+				subject   = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
+				model.add(subject, predicate, object);
+				
+				subject   = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
+				relation  = listRelationCountryLocation.get(rd.nextInt(listRelationCountryLocationSize));
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
+				model.add(subject, predicate, object);
+						
 			}
 //			else if(temp == 15)
 			{
-				createIRIRelationOrganizationTime(
-						listOrganization.get(rd.nextInt(listOrganizationSize)), 
-						listTime.get(rd.nextInt(listTimeSize)), 
-						listRelationOrganizationTime.get(rd.nextInt(listRelationOrganizationTimeSize)));
+				Organization organization = listOrganization.get(rd.nextInt(listOrganizationSize));
+				Time time                 = listTime.get(rd.nextInt(listTimeSize));
+				String relation           = listRelationOrganizationTime.get(rd.nextInt(listRelationOrganizationTimeSize));
+				
+				subject   = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(TIME.toString(), "/time" + time.getId());
+				model.add(subject, predicate, object);						
+						
 			}
 //			else if(temp == 16)
 			{
-				createIRIRelationOrganizationCountry(
-						listOrganization.get(rd.nextInt(listOrganizationSize)), 
-						listCountry.get(rd.nextInt(listCountrySize)), 
-						listRelationOrganizationCountry.get(rd.nextInt(listRelationOrganizationCountrySize)));
-				createIRIRelationCountryOrganization(
-						listCountry.get(rd.nextInt(listCountrySize)), 
-						listOrganization.get(rd.nextInt(listOrganizationSize)), 
-						listRelationCountryOrganization.get(rd.nextInt(listRelationCountryOrganizationSize)));
+				Organization organization = listOrganization.get(rd.nextInt(listOrganizationSize));
+				Country country           = listCountry.get(rd.nextInt(listCountrySize));
+				String relation           = listRelationOrganizationCountry.get(rd.nextInt(listRelationOrganizationCountrySize));
+				
+				subject   = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
+				model.add(subject, predicate, object);
+				
+				subject   = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
+				relation  = listRelationCountryOrganization.get(rd.nextInt(listRelationCountryOrganizationSize));
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
+				model.add(subject, predicate, object);
+						
 			}
 //			else if(temp == 17)
 			{
-				createIRIRelationCountryCountry(
-						listCountry.get(rd.nextInt(listCountrySize)), 
-						listCountry.get(rd.nextInt(listCountrySize)), 
-						listRelationCountryCountry.get(rd.nextInt(listRelationCountryCountrySize)));
+				Country country1 = listCountry.get(rd.nextInt(listCountrySize)); 
+				Country country2 = listCountry.get(rd.nextInt(listCountrySize));
+				String relation  = listRelationCountryCountry.get(rd.nextInt(listRelationCountryCountrySize));
+				
+				subject   = valueFactory.createIRI(COUNTRY.toString(), "/country" + country1.getId());
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(COUNTRY.toString(), "/country" + country2.getId());
+				model.add(subject, predicate, object);
+						
 			}
 //			else if(temp == 18)
 			{
-				createIRIRelationCountryTime(
-						listCountry.get(rd.nextInt(listCountrySize)),
-						listTime.get(rd.nextInt(listTimeSize)),
-						listRelationCountryTime.get(rd.nextInt(listRelationCountryTimeSize)));
+				Country country = listCountry.get(rd.nextInt(listCountrySize));
+				Time time       = listTime.get(rd.nextInt(listTimeSize));
+				String relation = listRelationCountryTime.get(rd.nextInt(listRelationCountryTimeSize));
+				
+				subject   = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
+				predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
+				object    = valueFactory.createIRI(TIME.toString(), "/time" + time.getId());
+				model.add(subject, predicate, object);
+						
 			}
 			if(model.size() == 100000)
 			{
 				conn.add(model);
 				model.clear();
 			}
+//			System.gc();
 		}
 		conn.add(model);
 		model.clear();
-	}
-	
-	
-	public void createIRIRelationPersonOrganization(Person person, Organization organization, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationPersonCountry(Person person, Country country, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationPersonEvent(Person person, Event event, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationPersonLocation(Person person, Location location, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationPersonPerson(Person person1, Person person2, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(PERSON.toString(), "/person" + person1.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(PERSON.toString(), "/person" + person2.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationPersonTime(Person person, Time time, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(TIME.toString(), "/time" + time.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	
-	public void createIRIRelationCountryCountry(Country country1, Country country2, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(COUNTRY.toString(), "/country" + country1.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(COUNTRY.toString(), "/country" + country2.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationCountryOrganization(Country country, Organization organization, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationCountryTime(Country country, Time time, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(TIME.toString(), "/time" + time.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationCountryPerson(Country country, Person person, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationCountryLocation(Country country, Location location, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationCountryEvent(Country country, Event event, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	
-	public void createIRIRelationEventPerson(Event event, Person person, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationEventCountry(Event event, Country country, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationEventEvent(Event event1, Event event2, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(EVENT.toString(), "/event" + event1.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(EVENT.toString(), "/event" + event2.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationEventOrganization(Event event, Organization organization, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationEventTime(Event event, Time time, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(TIME.toString(), "/time" + time.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationEventLocation(Event event, Location location, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	
-	public void createIRIRelationLocationPerson(Location location, Person person, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationLocationCountry(Location location, Country country, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationLocationOrganization(Location location, Organization organization, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationLocationTime(Location location, Time time, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(TIME.toString(), "/time" + time.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationLocationLocation(Location location1, Location location2, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(LOCATION.toString(), "/location" + location1.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(LOCATION.toString(), "/location" + location2.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	
-	public void createIRIRelationOrganizationPerson(Organization organization, Person person, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(PERSON.toString(), "/person" + person.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationOrganizationLocation(Organization organization, Location location, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(LOCATION.toString(), "/location" + location.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationOrganizationEvent(Organization organization, Event event, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(EVENT.toString(), "/event" + event.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationOrganizationCountry(Organization organization, Country country, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(COUNTRY.toString(), "/country" + country.getId());
-		
-		model.add(subject, predicate, object);
-	}
-	public void createIRIRelationOrganizationTime(Organization organization, Time time, String relation)
-	{
-		ValueFactory valueFactory = conn.getValueFactory();
-		IRI subject, predicate, object;
-		
-		subject   = valueFactory.createIRI(ORGANIZATION.toString(), "/organization" + organization.getId());
-		predicate = valueFactory.createIRI(RELATIONSHIP.toString(), "/" + relation);
-		object    = valueFactory.createIRI(TIME.toString(), "/time" + time.getId());
-		
-		model.add(subject, predicate, object);
 	}
 }
