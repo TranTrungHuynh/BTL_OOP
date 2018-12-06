@@ -1,0 +1,7 @@
+hasBase
+found
+discover
+donate
+destroy
+help
+support

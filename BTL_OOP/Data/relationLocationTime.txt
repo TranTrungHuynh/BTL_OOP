@@ -1,0 +1,6 @@
+inaugurationDay
+discoverDay
+constructDay
+destructionDay
+anniversary
+renovationDay

@@ -1,0 +1,7 @@
+has_Capital
+has_Special_Zone
+contain
+destruct
+remove
+block
+split

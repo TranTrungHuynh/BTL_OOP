@@ -18,6 +18,4 @@ public class CreateCountry {
 		Country country = new Country(name, description, continent, link, date);
 		return country;
 	}
-	
-	
 }

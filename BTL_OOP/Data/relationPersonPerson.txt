@@ -1,0 +1,16 @@
+mother
+father
+brother
+sister
+grandmother
+grandfather
+child
+daughter
+uncle
+aunt
+cousin
+niece
+nephew
+neighbor
+boss
+coworker

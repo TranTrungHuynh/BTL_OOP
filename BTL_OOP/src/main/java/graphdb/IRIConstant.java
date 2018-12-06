@@ -22,7 +22,7 @@ public class IRIConstant {
 
 	final String NAMESPACE = "http://shadow.org/";
 	
-	ValueFactory valueFactory = Connection.getRepositoryConnection().getValueFactory();
+	private ValueFactory valueFactory = Connection.getRepositoryConnection().getValueFactory();
 	
 	public IRIConstant()
 	{

@@ -1,0 +1,10 @@
+take_Place_Of
+held
+organization
+presence
+sponsored
+advertised
+start
+finish
+prepared
+placeIn

@@ -1,0 +1,7 @@
+is_Established
+have_Electricity
+have_Network
+have_Phone
+industrial_Revolution
+liberated
+have_Computer

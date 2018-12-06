@@ -17,5 +17,4 @@ public class CreateEvent {
 		Event event = new Event(name, description, link, date);
 		return event;
 	}
-	
 }

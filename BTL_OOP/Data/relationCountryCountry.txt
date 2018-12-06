@@ -1,0 +1,8 @@
+nearby
+far
+neighbor
+cooperate
+enemy
+support
+link
+dependent

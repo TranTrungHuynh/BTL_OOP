@@ -1,0 +1,10 @@
+inside
+outside
+isCapital
+atBorder
+atCenter
+is_Special_Zone
+revolutionize
+supply
+support
+splitFrom

@@ -37,20 +37,23 @@ public class Test {
 		
 		long start = System.currentTimeMillis();
 		
-//		CreateIRI.CreateIri(conn, model);
+		
 		
 		String namespace = "http://shawdow.org/";
 		ValueFactory vf = conn.getValueFactory();
 		IRI huynh1 = vf.createIRI(namespace,"huynhid");
 		IRI huynh2 = vf.createIRI(namespace , "huynhlabel");
 		
-		for (int i = 0; i < 100000; i++) {
-			model.add(huynh1, huynh2, vf.createLiteral("huynh" + i));
-//			if(model.size() == 70)
-//			{
+		for (int i = 0; i < 10000; i++) {
+			model = CreateIRI.CreateIri(conn, model);
+//			model.add(huynh1, huynh2, vf.createLiteral("huynh" + i));
+			System.out.println(model.size());
+			if(model.size() == 70)
+			{
+				System.out.println(model.size());
 //				model.clear();
-//				break;
-//			}
+				break;
+			}
 		}
 		
 		conn.add(model);

@@ -17,5 +17,4 @@ public class CreateLocation {
 		Location location = new Location(name, description, link, date);
 		return location;
 	}
-	
 }	

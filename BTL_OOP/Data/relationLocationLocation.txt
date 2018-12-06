@@ -1,0 +1,8 @@
+near
+next_To
+inside
+outside
+around
+larger_Than
+smaller_Than
+collaborate

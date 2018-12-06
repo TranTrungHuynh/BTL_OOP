@@ -5,12 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-/**
- * 
- * @author Huỳnh
- * Sinh một giá trị ngày tự động trong khoảng 1900-2018
- *
- */
 public class RandomDate {
 	static Date getDateRandom()
 	{
@@ -26,13 +20,14 @@ public class RandomDate {
 
         String dateRandom = gc.get(gc.DAY_OF_MONTH) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.YEAR);
         
-//      Trả về kiểu date thay vì string
         Date result = null;
         
-	    try {
+	    try
+	    {
 	    	result = new SimpleDateFormat("dd-MM-yyyy").parse(dateRandom);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
+		}
+	    catch (ParseException e)
+	    {
 			e.printStackTrace();
 		}
 	    return result;
