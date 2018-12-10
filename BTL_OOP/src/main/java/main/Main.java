@@ -108,8 +108,9 @@ public class Main {
 		
 		
 		/*============== Query Data ===================*/
-//		Query.queryBasic();
-//		Query.queryAdvance();
+//		Query query = new Query();
+//		query.queryBasic();
+//		query.queryAdvance();
 		
 		
 		System.out.println("\nTime Add = " + (end-start));

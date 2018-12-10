@@ -11,53 +11,40 @@ import org.eclipse.rdf4j.model.impl.TreeModel;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
 
 import create.entity.CreateRandomEntity;
-import model.Country;
 import model.Entity;
 import model.Event;
 import model.Location;
 import model.Organization;
 import model.Person;
 import model.Time;
+import readfile.io.ReadFile;
+import model.Country;
 
-public class CreateIRIStatement extends IRIConstant {
+public class CreateIRIStatement extends ReadFile {
+	
 	private static RepositoryConnection conn = Connection.getRepositoryConnection();
 	Model model = new TreeModel();
 	ValueFactory valueFactory = conn.getValueFactory();
 	IRI subject, predicate, object;
 	CreateRandomEntity cre = new CreateRandomEntity();
 	
-	private ArrayList<String> listRelationPersonCountry        = cre.getListRelationPersonCountry();
-	private ArrayList<String> listRelationPersonTime           = cre.getListRelationPersonTime();
-	private ArrayList<String> listRelationPersonPerson         = cre.getListRelationPersonPerson();
-	private ArrayList<String> listRelationPersonOrganization   = cre.getListRelationPersonOrganization();
-	private ArrayList<String> listRelationPersonLocation       = cre.getListRelationPersonLocation();
-	private ArrayList<String> listRelationPersonEvent		   = cre.getListRelationPersonEvent();
+	private String LABEL = "/has_Label";
+	private String DESCRIPTION = "/has_Description";
+	private String DATE = "/has_Date";
+	private String LINK = "/has_Link";
+	private String JOB = "/has_Job";
+	private String CONTINENT = "/has_Continent";
+	private String HEADQUARTER = "/has_Headquarter";
 	
-	private ArrayList<String> listRelationEventCountry         = cre.getListRelationEventCountry();
-	private ArrayList<String> listRelationEventEvent           = cre.getListRelationEventEvent();
-	private ArrayList<String> listRelationEventLocation        = cre.getListRelationEventLocation();
-	private ArrayList<String> listRelationEventOrganization    = cre.getListRelationEventOrganization();
-	private ArrayList<String> listRelationEventPerson 		   = cre.getListRelationEventPerson();
-	private ArrayList<String> listRelationEventTime            = cre.getListRelationEventTime();
+	protected IRI PERSON;
+	protected IRI COUNTRY;
+	protected IRI EVENT;
+	protected IRI TIME;
+	protected IRI LOCATION;
+	protected IRI ORGANIZATION;
+	protected IRI RELATIONSHIP;
 	
-	private ArrayList<String> listRelationLocationCountry      = cre.getListRelationLocationCountry();
-	private ArrayList<String> listRelationLocationPerson       = cre.getListRelationLocationPerson();
-	private ArrayList<String> listRelationLocationOrganization = cre.getListRelationLocationOrganization();
-	private ArrayList<String> listRelationLocationLocation     = cre.getListRelationLocationLocation();
-	private ArrayList<String> listRelationLocationTime         = cre.getListRelationLocationTime();
-	
-	private ArrayList<String> listRelationOrganizationCountry  = cre.getListRelationOrganizationCountry();
-	private ArrayList<String> listRelationOrganizationTime     = cre.getListRelationOrganizationTime();
-	private ArrayList<String> listRelationOrganizationLocation = cre.getListRelationOrganizationLocation();
-	private ArrayList<String> listRelationOrganizationEvent    = cre.getListRelationOrganizationEvent();
-	private ArrayList<String> listRelationOrganizationPerson   = cre.getListRelationOrganizationPerson();
-	
-	private ArrayList<String> listRelationCountryCountry       = cre.getListRelationCountryCountry();
-	private ArrayList<String> listRelationCountryTime          = cre.getListRelationCountryTime();
-	private ArrayList<String> listRelationCountryPerson        = cre.getListRelationCountryPerson();
-	private ArrayList<String> listRelationCountryEvent         = cre.getListRelationCountryEvent();
-	private ArrayList<String> listRelationCountryOrganization  = cre.getListRelationCountryOrganization();
-	private ArrayList<String> listRelationCountryLocation      = cre.getListRelationCountryLocation();
+	final String NAMESPACE = "http://shadow.org/";
 	
 	int listRelationPersonPersonSize   	   = listRelationPersonPerson.size();
 	int listRelationPersonLocationSize 	   = listRelationPersonLocation.size();
@@ -95,6 +82,14 @@ public class CreateIRIStatement extends IRIConstant {
 	public CreateIRIStatement()
 	{
 		super();
+		
+		PERSON = valueFactory.createIRI(NAMESPACE, "person");
+		COUNTRY = valueFactory.createIRI(NAMESPACE, "country");
+		EVENT = valueFactory.createIRI(NAMESPACE, "event");
+		TIME = valueFactory.createIRI(NAMESPACE, "time");
+		LOCATION = valueFactory.createIRI(NAMESPACE, "location");
+		ORGANIZATION = valueFactory.createIRI(NAMESPACE, "organization");
+		RELATIONSHIP = valueFactory.createIRI(NAMESPACE, "relationship");
 	}
 	
 	// Create IRI and upload Entity

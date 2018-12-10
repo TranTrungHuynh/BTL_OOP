@@ -3,19 +3,25 @@ package maintest;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
-import test.Test;
+import io.ReadFile;
+import model.test.Country;
 
 public class TestMain {
 
-	public static void main(String[] args) {
+	public static void test()
+	{
+		RandomEntity randomEntity = new RandomEntity();
+		ArrayList<Country> listCountry = new ArrayList<Country>();
+
+		listCountry = randomEntity.RandomEntity();
 		
-//		ArrayList<String> list = Test.readFile("D:\\CODE\\BTL_OOP\\src\\main\\resources\\countryName.txt");
-		
-//		for (String s : list) {
-//			System.out.println(s);
-//		}
-		
+		for (Country country : listCountry) {
+			System.out.println(country.getName());
+		}
 	}
 
-
+	public static void main(String[] args) {
+		test();
+		
+	}
 }

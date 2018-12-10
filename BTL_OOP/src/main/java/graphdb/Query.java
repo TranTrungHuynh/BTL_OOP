@@ -11,11 +11,11 @@ import org.eclipse.rdf4j.repository.RepositoryConnection;
 
 public class Query {
 
-	private static RepositoryConnection conn = Connection.getRepositoryConnection();
-	static long start, end;
+	private RepositoryConnection conn = Connection.getRepositoryConnection();
+	private long start, end;
 
 
-	public static void queryBasic()
+	public void queryBasic()
 	{
 		ArrayList<String> listQueryBasic = new ArrayList<String>();
 
@@ -80,12 +80,12 @@ public class Query {
 		}
 	}
 
-	public static void queryAdvance()
+	public void queryAdvance()
 	{
 
 	}
 
-	private static String handingQuery(String object)
+	private String handingQuery(String object)
 	{
 		int lastIndex = object.lastIndexOf("\"");
 		String result = object.substring(1, lastIndex);

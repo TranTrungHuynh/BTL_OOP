@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class RandomDate {
-	static Date getDateRandom()
+	Date getDateRandom()
 	{
 		GregorianCalendar gc = new GregorianCalendar();
 
@@ -33,7 +33,7 @@ public class RandomDate {
 	    return result;
 	}
 	
-	private static int randBetween(int start, int end) {
+	private int randBetween(int start, int end) {
         return start + (int)Math.round(Math.random() * (end - start));
     }
 }
