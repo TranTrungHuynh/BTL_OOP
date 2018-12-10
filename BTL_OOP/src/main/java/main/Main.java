@@ -22,8 +22,8 @@ import model.Time;
 public class Main {
 	public static void main(String[] args) {
 
-		int numberOfEntity = 1000000;
-		int numberOfRelationship = 2000000;
+		int numberOfEntity = 500000;
+		int numberOfRelationship = 1000000;
 		
 		// Get list Entity
 		CreateRandomEntity cre = new CreateRandomEntity();
@@ -36,7 +36,7 @@ public class Main {
 		ArrayList<Organization>listOrganization = new ArrayList<Organization>();
 		ArrayList<Time>listTime = new ArrayList<Time>();
 		
-		// Declare object upload relation and entity
+		// Define object upload relation and entity
 		CreateIRIStatement createIRIStatement = new CreateIRIStatement();
 		
 //		/*============== Filter Data Entity ===================*/
@@ -81,12 +81,12 @@ public class Main {
 		long start = System.currentTimeMillis();
 		
 		/*==============Upload Entity data to server=========*/
-//		createIRIStatement.createIRIPerson(listPerson);
-//		createIRIStatement.createIRICountry(listCountry);
-//		createIRIStatement.createIRIEvent(listEvent);
-//		createIRIStatement.createIRILocation(listLocation);
-//		createIRIStatement.createIRIOrganization(listOrganization);
-//		createIRIStatement.createIRITime(listTime);
+		createIRIStatement.createIRIPerson(listPerson);
+		createIRIStatement.createIRICountry(listCountry);
+		createIRIStatement.createIRIEvent(listEvent);
+		createIRIStatement.createIRILocation(listLocation);
+		createIRIStatement.createIRIOrganization(listOrganization);
+		createIRIStatement.createIRITime(listTime);
 		System.gc();
 		
 		// Show number of each Entity

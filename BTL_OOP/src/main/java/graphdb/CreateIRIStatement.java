@@ -398,11 +398,12 @@ public class CreateIRIStatement extends IRIConstant {
 		
 		Random rd = new Random();
 		int temp = 0;
-		
+		int count = 0;
+		int maxRelation = numberOfRelationship / 100000;
 		for (int i = 0; i < numberOfRelationship; i++)
 		{
-//			temp = rd.nextInt(19);
-//			if(temp == 0)
+			temp = rd.nextInt(10);
+			if(temp == 0)
 			{
 				Person person1  = listPerson.get(rd.nextInt(listPersonSize));
 				Person person2  = listPerson.get(rd.nextInt(listPersonSize));
@@ -413,7 +414,7 @@ public class CreateIRIStatement extends IRIConstant {
 				object    = valueFactory.createIRI(PERSON.toString(), "/person" + person2.getId());
 				model.add(subject, predicate, object);
 			}
-//			else if(temp == 1)
+			else if(temp == 1)
 			{
 				Person person   = listPerson.get(rd.nextInt(listPersonSize));
 				Event event     = listEvent.get(rd.nextInt(listEventSize));
@@ -431,7 +432,7 @@ public class CreateIRIStatement extends IRIConstant {
 				model.add(subject, predicate, object);
 
 			}
-//			else if(temp == 2)
+			else if(temp == 2)
 			{
 				Person person     = listPerson.get(rd.nextInt(listPersonSize));
 				Location location = listLocation.get(rd.nextInt(listLocationSize));
@@ -449,7 +450,7 @@ public class CreateIRIStatement extends IRIConstant {
 				model.add(subject, predicate, object);
 				
 			}
-//			else if(temp == 3)
+			else if(temp == 3)
 			{
 				Person person             = listPerson.get(rd.nextInt(listPersonSize));
 				Organization organization = listOrganization.get(rd.nextInt(listOrganizationSize));
@@ -467,7 +468,7 @@ public class CreateIRIStatement extends IRIConstant {
 				model.add(subject, predicate, object);
 
 			}
-//			else if(temp == 4)
+			else if(temp == 4)
 			{
 				Person person   = listPerson.get(rd.nextInt(listPersonSize));
 				Time time       = listTime.get(rd.nextInt(listTimeSize));
@@ -479,7 +480,7 @@ public class CreateIRIStatement extends IRIConstant {
 				model.add(subject, predicate, object);
 				
 			}
-//			else if(temp == 5)
+			else if(temp == 5)
 			{
 				Person person   = listPerson.get(rd.nextInt(listPersonSize));
 				Country country = listCountry.get(rd.nextInt(listCountrySize));
@@ -497,7 +498,7 @@ public class CreateIRIStatement extends IRIConstant {
 				model.add(subject, predicate, object);
 				
 			}
-//			else if(temp == 6)
+			else if(temp == 6)
 			{
 				Event event1    = listEvent.get(rd.nextInt(listEventSize));
 				Event event2    = listEvent.get(rd.nextInt(listEventSize));
@@ -509,7 +510,7 @@ public class CreateIRIStatement extends IRIConstant {
 				model.add(subject, predicate, object);
 				
 			}
-//			else if(temp == 7)
+			else if(temp == 7)
 			{
 				Event event       = listEvent.get(rd.nextInt(listEventSize));
 				Location location = listLocation.get(rd.nextInt(listLocationSize));
@@ -521,7 +522,7 @@ public class CreateIRIStatement extends IRIConstant {
 				model.add(subject, predicate, object);
 						
 			}
-//			else if(temp == 8)
+			else if(temp == 8)
 			{
 				Event event               = listEvent.get(rd.nextInt(listEventSize));
 				Organization organization = listOrganization.get(rd.nextInt(listOrganizationSize));
@@ -539,7 +540,7 @@ public class CreateIRIStatement extends IRIConstant {
 				model.add(subject, predicate, object);
 
 			}
-//			else if(temp == 9)
+			else if(temp == 9)
 			{
 				Event event     = listEvent.get(rd.nextInt(listEventSize));
 				Time time       = listTime.get(rd.nextInt(listTimeSize));
@@ -551,7 +552,7 @@ public class CreateIRIStatement extends IRIConstant {
 				model.add(subject, predicate, object);
 
 			}
-//			else if(temp == 10)
+			else if(temp == 10)
 			{
 				Event event     = listEvent.get(rd.nextInt(listEventSize));
 				Country country = listCountry.get(rd.nextInt(listCountrySize));
@@ -569,7 +570,7 @@ public class CreateIRIStatement extends IRIConstant {
 				model.add(subject, predicate, object);
 
 			}
-//			else if(temp == 11)
+			else if(temp == 11)
 			{
 				Location location1 = listLocation.get(rd.nextInt(listLocationSize));
 				Location location2 = listLocation.get(rd.nextInt(listLocationSize));
@@ -581,7 +582,7 @@ public class CreateIRIStatement extends IRIConstant {
 				model.add(subject, predicate, object);
 
 			}
-//			else if(temp == 12)
+			else if(temp == 12)
 			{
 				Location location         = listLocation.get(rd.nextInt(listLocationSize));
 				Organization organization = listOrganization.get(rd.nextInt(listOrganizationSize));
@@ -599,7 +600,7 @@ public class CreateIRIStatement extends IRIConstant {
 				model.add(subject, predicate, object);
 
 			}
-//			else if(temp == 13)
+			else if(temp == 13)
 			{
 				Location location = listLocation.get(rd.nextInt(listLocationSize));
 				Time time         = listTime.get(rd.nextInt(listTimeSize));
@@ -611,7 +612,7 @@ public class CreateIRIStatement extends IRIConstant {
 				model.add(subject, predicate, object);
 
 			}
-//			else if(temp == 14)
+			else if(temp == 14)
 			{
 				Location location = listLocation.get(rd.nextInt(listLocationSize));
 				Country country   = listCountry.get(rd.nextInt(listCountrySize));
@@ -629,7 +630,7 @@ public class CreateIRIStatement extends IRIConstant {
 				model.add(subject, predicate, object);
 						
 			}
-//			else if(temp == 15)
+			else if(temp == 15)
 			{
 				Organization organization = listOrganization.get(rd.nextInt(listOrganizationSize));
 				Time time                 = listTime.get(rd.nextInt(listTimeSize));
@@ -641,7 +642,7 @@ public class CreateIRIStatement extends IRIConstant {
 				model.add(subject, predicate, object);						
 						
 			}
-//			else if(temp == 16)
+			else if(temp == 16)
 			{
 				Organization organization = listOrganization.get(rd.nextInt(listOrganizationSize));
 				Country country           = listCountry.get(rd.nextInt(listCountrySize));
@@ -659,7 +660,7 @@ public class CreateIRIStatement extends IRIConstant {
 				model.add(subject, predicate, object);
 						
 			}
-//			else if(temp == 17)
+			else if(temp == 17)
 			{
 				Country country1 = listCountry.get(rd.nextInt(listCountrySize)); 
 				Country country2 = listCountry.get(rd.nextInt(listCountrySize));
@@ -671,7 +672,7 @@ public class CreateIRIStatement extends IRIConstant {
 				model.add(subject, predicate, object);
 						
 			}
-//			else if(temp == 18)
+			else if(temp == 18)
 			{
 				Country country = listCountry.get(rd.nextInt(listCountrySize));
 				Time time       = listTime.get(rd.nextInt(listTimeSize));
@@ -687,6 +688,11 @@ public class CreateIRIStatement extends IRIConstant {
 			{
 				conn.add(model);
 				model.clear();
+				count++;
+				if(count == maxRelation)
+				{
+					break;
+				}
 			}
 //			System.gc();
 		}
