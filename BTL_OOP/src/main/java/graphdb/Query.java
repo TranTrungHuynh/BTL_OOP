@@ -13,10 +13,11 @@ public class Query {
 
 	private RepositoryConnection conn = Connection.getRepositoryConnection();
 	private long start, end;
-
-
-	public void queryBasic()
+	
+	public ArrayList<String> queryBasic()
 	{
+		ArrayList<String> listResultQueryBasic = new ArrayList<String>();
+		
 		ArrayList<String> listQueryBasic = new ArrayList<String>();
 
 		// Đưa ra tên tất cả các country có Continent là: Africa
@@ -31,19 +32,46 @@ public class Query {
 		String strQuery2 =  "PREFIX person: <http://shadow.org/person/>\n" +
 				"SELECT DISTINCT ?object\n" +
 				"WHERE {\n" +
-				"?subject person:has_Label ?object.\n" +
+					"?subject person:has_Label ?object.\n" +
 				"}";
 		
-		//
+		// Đưa ra tên tất cả các Organization bắt đầu bằng "UNESCO"
+		String strQuery3 = "PREFIX organization: <http://shadow.org/organization/>\n" +
+				"SELECT *\n" +
+				"WHERE {\n" +
+				"?subject organization:has_Label ?object.\n" +
+				"FILTER (regex(?object,\"UNESCO\"))\n" +
+				"}";
+		
+		// Đưa ra tên tất cả các Person làm Teacher
+		String strQuery4 = "PREFIX person: <http://shadow.org/person/>\n" +
+				"SELECT *\n" +
+				"WHERE {\n" +
+					"?subject person:has_Job \"Teacher\".\n" +
+					"?subject person:has_Label ?object\n" +
+				"}";
+		
+		
 		
 		listQueryBasic.add(strQuery1);
 		listQueryBasic.add(strQuery2);
+		listQueryBasic.add(strQuery3);
+		listQueryBasic.add(strQuery4);
+//		listQueryBasic.add(strQuery5);
+//		listQueryBasic.add(strQuery6);
+//		listQueryBasic.add(strQuery7);
+//		listQueryBasic.add(strQuery8);
+//		listQueryBasic.add(strQuery9);
+//		listQueryBasic.add(strQuery10);
 
 
 		for (int i = 0; i < listQueryBasic.size(); i++)
 		{
-			System.out.println("\n*********************** Query " + (i+1) + " ******************************");
+//			System.out.println("\n*********************** Query " + (i+1) + " ******************************");
+			listResultQueryBasic.add("*********************** Query " + (i+1) + " ******************************");
+			
 			start = System.currentTimeMillis();
+			
 			TupleQuery tupleQuery = conn.prepareTupleQuery(listQueryBasic.get(i));
 			TupleQueryResult result = null;
 			try 
@@ -54,15 +82,18 @@ public class Query {
 					BindingSet bindingSet = result.next();
 					if(bindingSet.getValue("subject") != null)
 					{
-						System.out.print(bindingSet.getValue("subject") + "\t");
+//						System.out.print(bindingSet.getValue("subject") + "\t");
+						listResultQueryBasic.add(bindingSet.getValue("subject") + "\t");
 					}
 					if(bindingSet.getValue("predicate") != null)
 					{
-						System.out.print(bindingSet.getValue("predicate") + "\t");
+//						System.out.print(bindingSet.getValue("predicate") + "\t");
+						listResultQueryBasic.add(bindingSet.getValue("predicate") + "\t");
 					}
 					if(bindingSet.getValue("object") != null)
 					{
-						System.out.println(handingQuery(bindingSet.getValue("object").toString()));
+						listResultQueryBasic.add(handingQuery(bindingSet.getValue("object").toString()));
+//						System.out.println(handingQuery(bindingSet.getValue("object").toString()));
 //						System.out.println("\t" + bindingSet.getValue("object"));
 					}
 				}
@@ -76,13 +107,18 @@ public class Query {
 				result.close();
 			}
 			end = System.currentTimeMillis();
-			System.out.println(("\nTime Query = ") + (end-start));
+//			System.out.println(("\nTime Query = ") + (end-start));
+			listResultQueryBasic.add(("\nTime Query = ") + (end-start) + "\n\n\n");
 		}
+		
+		return listResultQueryBasic;
 	}
 
-	public void queryAdvance()
+	public ArrayList<String> queryAdvance()
 	{
-
+		ArrayList<String> listResultQueryAdvance = new ArrayList<String>();
+		
+		return listResultQueryAdvance;
 	}
 
 	private String handingQuery(String object)

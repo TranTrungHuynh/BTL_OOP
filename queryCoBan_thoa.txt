@@ -1,4 +1,4 @@
-1. Đưa ra tên tất cả các Person làm Teacher
+﻿1. Đưa ra tên tất cả các Person làm Teacher ==========================
 PREFIX person: <http://shadow.org/person/>
 	SELECT *
 	WHERE {
@@ -14,10 +14,10 @@ PREFIX country: <http://shadow.org/country/>
     ?subject country:has_Description ?object
 	}
 	
-3. Đưa ra tên tất cả các Organization bắt đầu bằng "UNESCO"
+3. Đưa ra tên tất cả các Organization bắt đầu bằng "UNESCO" ===============
 PREFIX organization: <http://shadow.org/organization/>
 	SELECT *
 	WHERE {
 	?subject organization:has_Label ?object.
     FILTER (regex(?object,"UNESCO"))
-	}  
+}  
