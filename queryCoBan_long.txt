@@ -1,0 +1,25 @@
+﻿_____________
+đưa ra tổ chức có trụ sở ở "Delhi, India":             ==========================
+PREFIX organization: <http://shadow.org/organization/>
+SELECT ?object
+WHERE {
+	?subject organization:has_Label ?object.
+	?subject organization:has_Headquarter "Delhi, India".
+}
+______________
+đưa ra thời gian tổ chức sự kiện International Water Week:
+PREFIX event: <http://shadow.org/event>
+SELECT ?object
+WHERE {
+	?subject event:has_Label "International Water Week".
+	?subject event:has_Date ?object.
+}
+______________
+đưa ra tên và thời gian diễn ra của tối đa 10 sự kiện
+PREFIX event: <http://shadow.org/event>
+SELECT ?name ?time
+WHERE {
+	?subject event:has_Label ?name.
+	?subject event:has_Date ?time.
+}
+LIMIT 10

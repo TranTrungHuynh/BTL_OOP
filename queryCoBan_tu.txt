@@ -1,0 +1,42 @@
+// dua ra tten cua cac event
+
+String strQuery3 = "PREFIX event: <http://shadow.org/event/>\n" +
+				"SELECT DISTINCT ?object\n" +
+				"WHERE {\n" +
+				"?subject event:has_Label ?object.\n" +
+				"}";
+// dua ra mieu ta cua event
+
+String strQuery5 = "PREFIX event: <http://shadow.org/person	/>\n" +
+				"SELECT DISTINCT ?object\n" +
+				"WHERE {\n" +
+				"?subject event:has_Description ?object.\n" +
+				"}";
+		
+
+// dua ra ten cua cac organization
+
+String strQuery4 = "PREFIX organization: <http://shadow.org/organization/>\n" +
+				"SELECT DISTINCT ?object\n" +
+				"WHERE {\n" +
+				"?subject organization:has_Label ?object.\n" +
+				"}";
+
+// dau ra \cong viec cua person
+
+
+String strQuery5 = "PREFIX person: <http://shadow.org/person	/>\n" +
+				"SELECT DISTINCT ?object\n" +
+				"WHERE {\n" +
+				"?subject person:has_job ?object.\n" +
+				"}";
+
+
+// dua ra mieu ta cua person
+
+String strQuery5 = "PREFIX person: <http://shadow.org/person	/>\n" +
+				"SELECT DISTINCT ?object\n" +
+				"WHERE {\n" +
+				"?subject person:has_Description ?object.\n" +
+				"}";
+		

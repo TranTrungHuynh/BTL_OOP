@@ -11,8 +11,15 @@ import org.eclipse.rdf4j.repository.RepositoryConnection;
 
 public class Query {
 
-	private RepositoryConnection conn = Connection.getRepositoryConnection();
+	private Connection connection;
+	private RepositoryConnection conn;
 	private long start, end;
+
+	public Query()
+	{
+		connection = new Connection();
+		conn = connection.getRepositoryConnection();
+	}
 	
 	public ArrayList<String> queryBasic()
 	{
@@ -126,5 +133,10 @@ public class Query {
 		int lastIndex = object.lastIndexOf("\"");
 		String result = object.substring(1, lastIndex);
 		return result;
+	}
+	
+	public void closeConnectionQuery()
+	{
+		conn.close();
 	}
 }

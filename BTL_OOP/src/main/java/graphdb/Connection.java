@@ -7,15 +7,16 @@ import org.eclipse.rdf4j.repository.http.HTTPRepository;
 
 public class Connection {
 	// GraphDB 
-	private static final String GRAPHDB_SERVER = "http://localhost:7200/";
-	private static final String REPOSITORY_ID = "PersonData";
+	private final String GRAPHDB_SERVER = "http://localhost:7200/";
+	private final String REPOSITORY_ID = "Test";
+	private RepositoryConnection repositoryConnection;
 
-	public static RepositoryConnection getRepositoryConnection() {
+	public RepositoryConnection getRepositoryConnection() {
 		Repository repository = new HTTPRepository(GRAPHDB_SERVER, REPOSITORY_ID);
 		try
 		{
 			repository.initialize();
-			RepositoryConnection repositoryConnection = repository.getConnection();
+			repositoryConnection = repository.getConnection();
 			return repositoryConnection;
 		}
 		catch (RepositoryException Ex)
@@ -23,5 +24,10 @@ public class Connection {
 			Ex.printStackTrace();
 		}
 		return null;
+	}
+	
+	public void closeConnection()
+	{
+		repositoryConnection.close();
 	}
 }

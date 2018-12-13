@@ -1,0 +1,32 @@
+Truy vấn đơn giản
+1. Những sự kiện nào 2 năm tổ chức 1 lần?
+
+PREFIX event: <http://shadow.org/event/>
+
+SELECT ?object WHERE {
+    ?subject event:has_Label ?object.
+    ?subject event:has_Description "2 năm tổ chức 1 lần".
+}
+
+2. Những người sinh sau năm 1998
+
+PREFIX person: <http://shadow.org/person/>
+
+SELECT ?object WHERE {
+    ?subject person:has_Label ?object.
+    ?subject person:has_Date ?date.
+    FILTER (year(?date) >= 1998)
+}
+
+3. Mô tả về đất nước Australia 
+
+PREFIX country: <http://shadow.org/country/>
+
+SELECT ?object WHERE {
+    ?subject country:has_Label "Australia".
+    ?subject country:has_Description ?object.
+}
+
+Truy vấn nâng cao
+1. Những người trên 20 tuổi làm nghề gì nhiều nhất?
+

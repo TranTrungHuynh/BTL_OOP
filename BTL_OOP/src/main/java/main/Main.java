@@ -24,8 +24,8 @@ import readfile.io.WriteFile;
 public class Main {
 	public static void main(String[] args) {
 
-		int numberOfEntity = 500;
-		int numberOfRelationship = 100;
+		int numberOfEntity = 2000000;
+		int numberOfRelationship = 4000000;
 		
 		// Get list Entity
 		CreateRandomEntity cre = new CreateRandomEntity();
@@ -41,8 +41,8 @@ public class Main {
 		// Define object upload relation and entity
 		CreateIRIStatement createIRIStatement = new CreateIRIStatement();
 		
-		Query query         = new Query();
-		WriteFile writeFile = new WriteFile();
+//		Query query         = new Query();
+//		WriteFile writeFile = new WriteFile();
 		boolean checkWriteFile;
 		
 //		/*============== Filter Data Entity ===================*/
@@ -87,13 +87,13 @@ public class Main {
 		long start = System.currentTimeMillis();
 		
 		/*==============Upload Entity data to server=========*/
-//		createIRIStatement.createIRIPerson(listPerson);
-//		createIRIStatement.createIRICountry(listCountry);
-//		createIRIStatement.createIRIEvent(listEvent);
-//		createIRIStatement.createIRILocation(listLocation);
-//		createIRIStatement.createIRIOrganization(listOrganization);
-//		createIRIStatement.createIRITime(listTime);
-//		System.gc();
+		createIRIStatement.createIRIPerson(listPerson);
+		createIRIStatement.createIRICountry(listCountry);
+		createIRIStatement.createIRIEvent(listEvent);
+		createIRIStatement.createIRILocation(listLocation);
+		createIRIStatement.createIRIOrganization(listOrganization);
+		createIRIStatement.createIRITime(listTime);
+		listEntity.clear();
 		
 		// Show number of each Entity
 //		System.out.println(listPerson.size());
@@ -102,27 +102,29 @@ public class Main {
 //		System.out.println(listLocation.size());
 //		System.out.println(listOrganization.size());
 //		System.out.println(listTime.size());
-//		System.out.println();
+//		System.out.println(listEntity.size());
+		
+		long end1 = System.currentTimeMillis();
+		System.out.println("Time 1 = " + (end1-start));
 		
 //		long start = System.currentTimeMillis();
 		
 		/*============== Upload Relationship ===================*/
-//		createIRIStatement.uploadRelationData(numberOfRelationship, listPerson,
-//				listCountry, listEvent, listLocation, listOrganization, listTime);
+		createIRIStatement.uploadRelationData(numberOfRelationship);
 		
-		long end = System.currentTimeMillis();
-		
+		long end2 = System.currentTimeMillis();
+		System.out.println("\nTime Add = " + (end2-start));
 		
 		/*============== Query Data ===================*/
-		checkWriteFile = writeFile.writeFileQuery("./ResultQueryBasic.txt", query.queryBasic());
-		if(checkWriteFile)
-		{
-			System.out.println("Write file ResultQueryBasic.txt success !");
-		}
-		else
-		{
-			System.out.println("Error write ResultQueryBasic.txt file !");
-		}
+//		checkWriteFile = writeFile.writeFileQuery("./ResultQueryBasic.txt", query.queryBasic());
+//		if(checkWriteFile)
+//		{
+//			System.out.println("Write file ResultQueryBasic.txt success !");
+//		}
+//		else
+//		{
+//			System.out.println("Error write ResultQueryBasic.txt file !");
+//		}
 		
 //		check = writeFile.writeFileQuery("", query.queryAdvance());
 //		if(checkWriteFile)
@@ -133,8 +135,7 @@ public class Main {
 //		{
 //			System.out.println("Error write ResultQueryAdvance.txt file !");
 //		}
-		
-//		System.out.println("\nTime Add = " + (end-start));
+//		query.closeConnectionQuery();
 
 		System.exit(0);
 	}  
