@@ -18,7 +18,6 @@ import model.Location;
 import model.Organization;
 import model.Person;
 import model.Time;
-import readfile.io.ReadFile;
 import model.Country;
 
 public class CreateIRIStatement extends ReadFile {

@@ -1,4 +1,4 @@
-package readfile.io;
+package writefile.io;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;

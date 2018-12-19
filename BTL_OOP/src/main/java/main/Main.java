@@ -19,13 +19,13 @@ import model.Location;
 import model.Organization;
 import model.Person;
 import model.Time;
-import readfile.io.WriteFile;
+import writefile.io.WriteFile;
 
 public class Main {
 	public static void main(String[] args) {
 
-		int numberOfEntity = 15000000;
-		int numberOfRelationship = 17000000;
+		int numberOfEntity = 5000;
+		int numberOfRelationship = 7000;
 		
 		// Get list Entity
 		CreateRandomEntity cre = new CreateRandomEntity();
@@ -41,8 +41,8 @@ public class Main {
 		// Define object upload relation and entity
 		CreateIRIStatement createIRIStatement = new CreateIRIStatement();
 		
-//		Query query         = new Query();
-//		WriteFile writeFile = new WriteFile();
+		Query query         = new Query();
+		WriteFile writeFile = new WriteFile();
 		boolean checkWriteFile;
 		
 //		/*============== Filter Data Entity ===================*/
@@ -95,19 +95,9 @@ public class Main {
 		createIRIStatement.createIRITime(listTime);
 		listEntity.clear();
 		
-		// Show number of each Entity
-//		System.out.println(listPerson.size());
-//		System.out.println(listCountry.size());
-//		System.out.println(listEvent.size());
-//		System.out.println(listLocation.size());
-//		System.out.println(listOrganization.size());
-//		System.out.println(listTime.size());
-//		System.out.println(listEntity.size());
 		
 		long end1 = System.currentTimeMillis();
 		System.out.println("Time 1 = " + (end1-start));
-		
-//		long start = System.currentTimeMillis();
 		
 		/*============== Upload Relationship ===================*/
 		createIRIStatement.uploadRelationData(numberOfRelationship);
@@ -116,7 +106,7 @@ public class Main {
 		System.out.println("\nTime Add = " + (end2-start));
 		
 		/*============== Query Data ===================*/
-//		checkWriteFile = writeFile.writeFileQuery("./ResultQueryBasic.txt", query.queryBasic());
+		checkWriteFile = writeFile.writeFileQuery("./ResultQueryBasic.txt", query.queryBasic());
 //		if(checkWriteFile)
 //		{
 //			System.out.println("Write file ResultQueryBasic.txt success !");
@@ -126,7 +116,7 @@ public class Main {
 //			System.out.println("Error write ResultQueryBasic.txt file !");
 //		}
 		
-//		check = writeFile.writeFileQuery("", query.queryAdvance());
+//		checkWriteFile = writeFile.writeFileQuery("./ResultQueryAdvance.txt", query.queryAdvance());
 //		if(checkWriteFile)
 //		{
 //			System.out.println("Write file ResultQueryAdvance.txt success !");
@@ -135,7 +125,7 @@ public class Main {
 //		{
 //			System.out.println("Error write ResultQueryAdvance.txt file !");
 //		}
-//		query.closeConnectionQuery();
+		query.closeConnectionQuery();
 
 		System.exit(0);
 	}  

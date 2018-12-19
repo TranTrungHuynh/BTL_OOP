@@ -1,4 +1,4 @@
-package readfile.io;
+package graphdb;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.ValueFactory;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
 
-import graphdb.Connection;
+import writefile.io.FileNameConstant;
 
 public class ReadFile extends FileNameConstant {
 		private Connection connection = new Connection();

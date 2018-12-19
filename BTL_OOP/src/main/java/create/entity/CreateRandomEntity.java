@@ -5,14 +5,29 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import graphdb.ReadFile;
 import model.Entity;
-import readfile.io.ReadFile;
 
 public class CreateRandomEntity extends ReadFile {
+	
+	Entity entity;
+	CreatePerson createPerson;
+	CreateCountry createCountry;
+	CreateEvent createEvent;
+	CreateLocation createLocation;
+	CreateOrganization createOrganization;
+	CreateTime createTime;
 	
 	public CreateRandomEntity()
 	{
 		super();
+		
+		createPerson = new CreatePerson();
+		createCountry = new CreateCountry();
+		createEvent = new CreateEvent();
+		createLocation = new CreateLocation();
+		createOrganization = new CreateOrganization();
+		createTime = new CreateTime();
 	}
 	
 	public ArrayList<Entity> getListRandomEntity(int numberOfEntity)
@@ -27,15 +42,6 @@ public class CreateRandomEntity extends ReadFile {
 	
 	private Entity randomEntity()
 	{
-		Entity entity;
-		CreatePerson createPerson = new CreatePerson();
-		CreateCountry createCountry = new CreateCountry();
-		CreateEvent createEvent = new CreateEvent();
-		CreateLocation createLocation = new CreateLocation();
-		CreateOrganization createOrganization = new CreateOrganization();
-		CreateTime createTime = new CreateTime();
-		
-		
 		Random rd = new Random();
 		int chooseEntity = rd.nextInt(6);
 		switch(chooseEntity)

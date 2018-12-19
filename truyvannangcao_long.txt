@@ -1,0 +1,29 @@
+﻿- đưa ra tên các senior được mời đến devday da nang tổ chức vào ngày "Aug. 1, 1991"
+PREFIX person: <http://shadow.org/person/>
+PREFIX relationship: <http://shadow.org/relationship/>
+PREFIX time: <http://shadow.org/time/>
+PREFIX event: <http://shadow.org/event/>
+SELECT ?name 
+WHERE {
+	?event relationship:invite ?who.
+	?person person:has_Label ?name.
+    	?person person:has_Job "Senior Developer".
+	?event relationship:on ?time.
+    	?event event:has_Label "DevDay Da Nang (Dev Day)".
+    	?time time:has_Label "Aug. 1, 1991".
+}
+
+- người nước nào đến du lịch Phần Lan nhiều nhất (trong năm nào?)
+PREFIX person: <http://shadow.org/person/>
+PREFIX relationship: <http://shadow.org/relationship/>
+PREFIX country: <http://shadow.org/country/>
+PREFIX time: <http://shadow.org/time/>
+SELECT ?country_name (count(?country_name) as ?quantity)
+WHERE {
+	?person relationship:travel ?to_country.
+    	?to_country country:has_Label "Phần Lan".
+	?person relationship:live ?country.
+	?country country:has_Label ?country_name.
+}
+GROUP BY ?country_name
+ORDER BY DESC(?quantity) LIMIT 1

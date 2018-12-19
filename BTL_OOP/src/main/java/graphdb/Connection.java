@@ -8,7 +8,7 @@ import org.eclipse.rdf4j.repository.http.HTTPRepository;
 public class Connection {
 	// GraphDB 
 	private final String GRAPHDB_SERVER = "http://localhost:7200/";
-	private final String REPOSITORY_ID = "BTL_OOP_6";
+	private final String REPOSITORY_ID = "BTL_OOP_1";
 	private RepositoryConnection repositoryConnection;
 
 	public RepositoryConnection getRepositoryConnection() {
