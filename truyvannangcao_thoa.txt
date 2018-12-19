@@ -1,0 +1,41 @@
+1. Những sự kiện nào được quản lý bởi tổ chức BlackBerry và được chuẩn bị ở đất nước Cape Verde
+PREFIX country: <http://shadow.org/country/>
+PREFIX organization: <http://shadow.org/organization/>
+PREFIX relationship: <http://shadow.org/relationship/>
+PREFIX event: <http://shadow.org/event/>
+	SELECT ?object
+	WHERE {
+    ?event event:has_Label ?object.
+    ?event relationship:managed ?organization .
+  	?organization organization:has_Label "BlackBerry" .
+    ?event relationship:prepared ?country .
+    ?country country:has_Label "Cape Verde" .
+}
+
+2. Những người tham gia sự kiện Vietbuild Home diễn ra ở Seattle, United States
+PREFIX person: <http://shadow.org/person/>
+PREFIX relationship: <http://shadow.org/relationship/>
+PREFIX event: <http://shadow.org/event/>
+PREFIX location: <http://shadow.org/location/>
+	SELECT ?object
+	WHERE {
+    ?person person:has_Label ?object.
+    ?person relationship:practice ?event .
+    ?event event:has_Label "Vietbuild Home" .
+    ?event relationship:take_Place_Of ?location.
+    ?location location:has_Label "Seattle, United States" .
+}
+
+3. Tổ chức Samsung Group tổ chức những sựu kiện nào vào Feb. 21, 1993
+PREFIX event: <http://shadow.org/event/>
+PREFIX relationship: <http://shadow.org/relationship/>
+PREFIX organization: <http://shadow.org/organization/>
+PREFIX time: <http://shadow.org/time/>
+	SELECT ?object
+	WHERE {
+	?organization organization:has_Label "Samsung Group".
+    ?organization relationship:organization ?event.
+    ?event event:has_Label ?object.
+    ?event relationship:take_Place_On ?time.
+    ?time time:has_Label "Feb. 21, 1993".
+	}	

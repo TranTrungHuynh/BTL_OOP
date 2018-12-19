@@ -24,8 +24,8 @@ import readfile.io.WriteFile;
 public class Main {
 	public static void main(String[] args) {
 
-		int numberOfEntity = 2000000;
-		int numberOfRelationship = 4000000;
+		int numberOfEntity = 15000000;
+		int numberOfRelationship = 17000000;
 		
 		// Get list Entity
 		CreateRandomEntity cre = new CreateRandomEntity();

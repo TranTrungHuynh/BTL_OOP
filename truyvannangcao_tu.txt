@@ -1,0 +1,27 @@
+﻿
+đưa ra tên tổ chức ở Hanoi và được thành lập sau 1976.
+PREFIX organization: <http://shadow.org/organization/>
+SELECT ?object
+WHERE {
+	?subject organization:has_Label ?object.
+	?subject organization:has_Headquarter "Hanoi, Vietnam".
+	?subject organization:has_Date ?date.
+ 
+	FILTER (year(?date) <= 1976)
+
+}
+
+
+Đưa ra tên 5 nước ở châu á và có event "Qs World Grad School Tour Ho Chi Minh City"
+PREFIX country: <http://shadow.org/country/>
+PREFIX event: <http://shadow.org/event/>
+				SELECT DISTINCT ?object
+				WHERE {
+				?subject ?predicate "Asia".
+				?subject event:has_Label "Qs World Grad School Tour Ho Chi Minh City".
+				?subject country:has_Label ?object.
+}
+LIMIT 5
+
+
+

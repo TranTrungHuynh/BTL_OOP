@@ -1,0 +1,30 @@
+Truy vấn nâng cao
+
+1. Địa điểm nào nằm tại biên giới của đất nước mà nhân viên của Amira Chang đã đến thăm?
+
+PREFIX person: <http://shadow.org/person/>	
+PREFIX location: <http://shadow.org/location/>
+PREFIX relationship: <http://shadow.org/relationship/>
+SELECT ?object
+WHERE {
+	?subject person:has_Label "Amira Chang".
+	?subject relationship:boss ?employee.
+	?employee relationship:visit ?country.
+	?location relationship:atBorder ?country.
+	?location location:has_Label ?object.
+}
+
+2. Những địa điểm nào nằm xung quanh nơi làm việc của cháu của người thành lập công ty Heineken Brewery?
+
+PREFIX organization: <http://shadow.org/organization/>
+PREFIX location: <http://shadow.org/location/>
+PREFIX relationship: <http://shadow.org/relationship/>
+SELECT ?object
+WHERE {
+	?subject organization:has_Label "Heineken Brewery".
+	?founder relationship:found ?subject.
+    ?founder relationship:uncle ?person.
+    ?person relationship:work ?location.
+    ?location2 relationship:around ?location.
+    ?location2 location:has_Label ?object.
+}

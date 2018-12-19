@@ -8,6 +8,7 @@ import org.eclipse.rdf4j.model.Literal;
 import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.ValueFactory;
 import org.eclipse.rdf4j.model.impl.TreeModel;
+import org.eclipse.rdf4j.model.vocabulary.RDF;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
 
 import create.entity.CreateRandomEntity;
@@ -44,6 +45,13 @@ public class CreateIRIStatement extends ReadFile {
 	private final String LOCATION     = "http://shadow.org/location"; 
 	private final String ORGANIZATION = "http://shadow.org/organization";
 	
+	private final IRI iriPERSON;
+	private final IRI iriCOUNTRY;
+	private final IRI iriEVENT;
+	private final IRI iriTIME;
+	private final IRI iriLOCATION;
+	private final IRI iriORGANIZATION;
+	
 	ArrayList<IRI> listIRIPerson;
 	ArrayList<IRI> listIRICountry;
 	ArrayList<IRI> listIRIOrganization;
@@ -66,6 +74,13 @@ public class CreateIRIStatement extends ReadFile {
 		listIRITime         = new ArrayList<IRI>();
 		listIRILocation     = new ArrayList<IRI>();
 		listIRIOrganization = new ArrayList<IRI>();
+		
+		iriPERSON           = valueFactory.createIRI(PERSON);
+		iriCOUNTRY			= valueFactory.createIRI(COUNTRY);    
+		iriEVENT			= valueFactory.createIRI(EVENT);
+		iriTIME				= valueFactory.createIRI(TIME);
+		iriLOCATION			= valueFactory.createIRI(LOCATION);
+		iriORGANIZATION		= valueFactory.createIRI(ORGANIZATION);
 	}
 	
 	// Create IRI and upload Entity
@@ -79,6 +94,9 @@ public class CreateIRIStatement extends ReadFile {
 			{
 				subject = valueFactory.createIRI(PERSON, "/person" + person.getId());
 				listIRIPerson.add(subject);
+				
+				// Add instance of class
+				model.add(subject, RDF.TYPE, iriPERSON);
 				
 				// Add name
 				predicate = valueFactory.createIRI(PERSON, LABEL);
@@ -105,6 +123,11 @@ public class CreateIRIStatement extends ReadFile {
 				object = valueFactory.createLiteral(person.getJob());
 				model.add(subject, predicate, object);
 				
+				if(model.size() >= 200000)
+				{
+					conn.add(model);
+					model.clear();
+				}
 			}
 			listPerson.clear();
 			conn.add(model);
@@ -125,6 +148,9 @@ public class CreateIRIStatement extends ReadFile {
 			{
 				subject = valueFactory.createIRI(COUNTRY, "/country" + country.getId());
 				listIRICountry.add(subject);
+				
+				// Add instance of class
+				model.add(subject, RDF.TYPE, iriCOUNTRY);
 				
 				// Add name
 				predicate = valueFactory.createIRI(COUNTRY, LABEL);
@@ -151,6 +177,11 @@ public class CreateIRIStatement extends ReadFile {
 				object = valueFactory.createLiteral(country.getContinent());
 				model.add(subject, predicate, object);
 				
+				if(model.size() >= 200000)
+				{
+					conn.add(model);
+					model.clear();
+				}
 			}
 			listCountry.clear();
 			conn.add(model);
@@ -172,6 +203,9 @@ public class CreateIRIStatement extends ReadFile {
 				subject = valueFactory.createIRI(EVENT, "/event" + event.getId());
 				listIRIEvent.add(subject);
 				
+				// Add instance of class
+				model.add(subject, RDF.TYPE, iriEVENT);
+				
 				// Add name
 				predicate = valueFactory.createIRI(EVENT, LABEL);
 				object = valueFactory.createLiteral(event.getName());
@@ -192,6 +226,11 @@ public class CreateIRIStatement extends ReadFile {
 				object = valueFactory.createLiteral(event.getDate());
 				model.add(subject, predicate, object);
 				
+				if(model.size() >= 200000)
+				{
+					conn.add(model);
+					model.clear();
+				}
 			}
 			listEvent.clear();
 			conn.add(model);
@@ -213,6 +252,9 @@ public class CreateIRIStatement extends ReadFile {
 				subject = valueFactory.createIRI(LOCATION, "/location" + location.getId());
 				listIRILocation.add(subject);
 				
+				// Add instance of class
+				model.add(subject, RDF.TYPE, iriLOCATION);
+				
 				// Add name
 				predicate = valueFactory.createIRI(LOCATION, LABEL);
 				object = valueFactory.createLiteral(location.getName());
@@ -233,6 +275,11 @@ public class CreateIRIStatement extends ReadFile {
 				object = valueFactory.createLiteral(location.getDate());
 				model.add(subject, predicate, object);
 				
+				if(model.size() >= 200000)
+				{
+					conn.add(model);
+					model.clear();
+				}
 			}
 			listLocation.clear();
 			conn.add(model);
@@ -253,6 +300,9 @@ public class CreateIRIStatement extends ReadFile {
 			{
 				subject = valueFactory.createIRI(ORGANIZATION, "/organization" + organization.getId());
 				listIRIOrganization.add(subject);
+				
+				// Add instance of class
+				model.add(subject, RDF.TYPE, iriORGANIZATION);
 				
 				// Add name
 				predicate = valueFactory.createIRI(ORGANIZATION, LABEL);
@@ -279,6 +329,11 @@ public class CreateIRIStatement extends ReadFile {
 				object = valueFactory.createLiteral(organization.getHeadquarter());
 				model.add(subject, predicate, object);
 				
+				if(model.size() >= 200000)
+				{
+					conn.add(model);
+					model.clear();
+				}
 			}
 			listOrganization.clear();
 			conn.add(model);
@@ -300,6 +355,9 @@ public class CreateIRIStatement extends ReadFile {
 				subject = valueFactory.createIRI(TIME, "/time" + time.getId()+"");
 				listIRITime.add(subject);
 				
+				// Add instance of class
+				model.add(subject, RDF.TYPE, iriTIME);
+				
 				// Add name
 				predicate = valueFactory.createIRI(TIME, LABEL);
 				object = valueFactory.createLiteral(time.getName());
@@ -320,6 +378,11 @@ public class CreateIRIStatement extends ReadFile {
 				object = valueFactory.createLiteral(time.getDate());
 				model.add(subject, predicate, object);
 				
+				if(model.size() >= 200000)
+				{
+					conn.add(model);
+					model.clear();
+				}
 			}
 			listTime.clear();
 			conn.add(model);
@@ -338,7 +401,7 @@ public class CreateIRIStatement extends ReadFile {
 		
 		int randomRelation;
 		int count = 0;
-		int maxRelation = numberOfRelationship / 300000;
+		int maxRelation = numberOfRelationship / 1000000;
 		
 //		Model newModel = new TreeModel();
 		
@@ -530,7 +593,7 @@ public class CreateIRIStatement extends ReadFile {
 				model.add(subject, predicate, object);
 						
 			}
-			if(model.size() >= 300000)
+			if(model.size() >= 1000000)
 			{
 				conn.add(model);
 				model.clear();
