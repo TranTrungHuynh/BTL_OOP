@@ -402,8 +402,6 @@ public class CreateIRIStatement extends ReadFile {
 		int count = 0;
 		int maxRelation = numberOfRelationship / 1000000;
 		
-//		Model newModel = new TreeModel();
-		
 		for (int i = 0; i < numberOfRelationship; i++)
 		{
 			randomRelation = rd.nextInt(19);
@@ -472,8 +470,8 @@ public class CreateIRIStatement extends ReadFile {
 			else if(randomRelation == 6)
 			{
 				subject   = listIRIEvent.get(rd.nextInt(listIRIEvent.size()));
-				object    = listIRIEvent.get(rd.nextInt(listIRIEvent.size()));
 				predicate = listRelationEventEvent.get(rd.nextInt(listRelationEventEvent.size()));
+				object    = listIRIEvent.get(rd.nextInt(listIRIEvent.size()));
 				model.add(subject, predicate, object);
 			}
 			else if(randomRelation == 7)

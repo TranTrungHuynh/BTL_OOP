@@ -1,30 +1,167 @@
-Truy vấn nâng cao
+1. Chọn tên những người làm nghề Senior Developer, tham gia chuẩn bị sự kiện nào đó tại địa điểm Abidjan, Ivory Coast
 
-1. Địa điểm nào nằm tại biên giới của đất nước mà nhân viên của Amira Chang đã đến thăm?
-
-PREFIX person: <http://shadow.org/person/>	
-PREFIX location: <http://shadow.org/location/>
-PREFIX relationship: <http://shadow.org/relationship/>
-SELECT ?object
-WHERE {
-	?subject person:has_Label "Amira Chang".
-	?subject relationship:boss ?employee.
-	?employee relationship:visit ?country.
-	?location relationship:atBorder ?country.
-	?location location:has_Label ?object.
-}
-
-2. Những địa điểm nào nằm xung quanh nơi làm việc của cháu của người thành lập công ty Heineken Brewery?
-
+querry:
 PREFIX organization: <http://shadow.org/organization/>
 PREFIX location: <http://shadow.org/location/>
+PREFIX person: <http://shadow.org/person/>
 PREFIX relationship: <http://shadow.org/relationship/>
 SELECT ?object
 WHERE {
-	?subject organization:has_Label "Heineken Brewery".
-	?founder relationship:found ?subject.
-    ?founder relationship:uncle ?person.
-    ?person relationship:work ?location.
-    ?location2 relationship:around ?location.
-    ?location2 location:has_Label ?object.
+	?subject person:has_Job "Senior Developer".
+	?subject person:has_Label ?object.
+	?subject relationship:prepare ?event.
+	?event relationship:take_Place_Of ?location.
+	?location location:has_Label "Abidjan, Ivory Coast".
 }
+
+
+** Lệnh insert:
+Chạy lần lượt các lệnh:
+
+======================================================
+PREFIX organization: <http://shadow.org/organization/>
+PREFIX location: <http://shadow.org/location/>
+PREFIX person: <http://shadow.org/person/>
+PREFIX event: <http://shadow.org/event/>
+PREFIX relationship: <http://shadow.org/relationship/>
+DELETE {
+	# Xóa label của địa điểm 48
+	location:location43567 location:has_Label ?label.
+}
+WHERE {
+	location:location43567 ?p ?o.
+}
+======================================================
+PREFIX organization: <http://shadow.org/organization/>
+PREFIX location: <http://shadow.org/location/>
+PREFIX person: <http://shadow.org/person/>
+PREFIX event: <http://shadow.org/event/>
+PREFIX relationship: <http://shadow.org/relationship/>
+INSERT {
+	# Thêm nghề cho người 659
+	person:person659 person:has_Job "Senior Developer".
+	person:person659 relationship:prepare event:event9541.
+}
+WHERE {
+	person:person659 ?p ?o.
+}
+======================================================
+PREFIX organization: <http://shadow.org/organization/>
+PREFIX location: <http://shadow.org/location/>
+PREFIX person: <http://shadow.org/person/>
+PREFIX event: <http://shadow.org/event/>
+PREFIX relationship: <http://shadow.org/relationship/>
+INSERT {
+	# Thêm nghề cho người 659
+	person:person23 person:has_Job "Senior Developer".
+	person:person23 relationship:prepare event:event9541.
+}
+WHERE {
+	person:person23 ?p ?o.
+}
+======================================================
+PREFIX organization: <http://shadow.org/organization/>
+PREFIX location: <http://shadow.org/location/>
+PREFIX person: <http://shadow.org/person/>
+PREFIX event: <http://shadow.org/event/>
+PREFIX relationship: <http://shadow.org/relationship/>
+INSERT {
+	event:event9541 relationship:take_Place_Of location:location43567.
+}
+WHERE {
+	event:event9541 ?p ?o.
+}
+======================================================
+PREFIX organization: <http://shadow.org/organization/>
+PREFIX location: <http://shadow.org/location/>
+PREFIX person: <http://shadow.org/person/>
+PREFIX event: <http://shadow.org/event/>
+PREFIX relationship: <http://shadow.org/relationship/>
+INSERT {
+	location:location43567 location:has_Label "Abidjan, Ivory Coast".
+}
+WHERE {
+	location:location43567 ?p ?o.
+}
+=======================================================
+============== E N D ===================================
+
+============== T R U Y V Ấ N 2 ==========================
+
+2. Những phụ nữ tảo hôn sống tại Việt Nam? (Person có quan hệ mother với person khác và năm sinh của person con - năm sinh person mẹ < 18)
+
+querry:
+PREFIX person: <http://shadow.org/person/>
+PREFIX country: <http://shadow.org/country/>
+PREFIX relationship: <http://shadow.org/relationship/>
+SELECT DISTINCT ?object 
+WHERE {
+	?subject person:has_Label ?object.
+	?subject person:has_Date ?motherBirth.
+	?subject relationship:mother ?child.
+	?child person:has_Date ?childBirth.
+	?subject relationship:live ?country.
+	?country country:has_Label "Việt Nam".
+	FILTER (year(?childBirth) - year(?motherBirth) < 18)
+}
+
+insert:
+
+================================================
+PREFIX country: <http://shadow.org/country/>
+PREFIX person: <http://shadow.org/person/>
+PREFIX relationship: <http://shadow.org/relationship/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+DELETE {
+	person:person34 person:has_Date ?date.
+}
+WHERE {
+	person:person34 ?p ?o.
+}
+================================================
+PREFIX country: <http://shadow.org/country/>
+PREFIX person: <http://shadow.org/person/>
+PREFIX relationship: <http://shadow.org/relationship/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+DELETE {
+	person:person48 person:has_Date ?date.
+}
+WHERE {
+	person:person48 ?p ?o.
+}
+================================================
+PREFIX country: <http://shadow.org/country/>
+PREFIX person: <http://shadow.org/person/>
+PREFIX relationship: <http://shadow.org/relationship/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+INSERT {
+	person:person34 person:has_Date "1977-01-01T00:00:00-02:00"^^xsd:dateTime.
+	person:person34 relationship:mother person:person48.
+	person:person34 relationship:live country:country60798.
+}
+WHERE {
+	person:person34 ?p ?o.
+}
+================================================
+PREFIX country: <http://shadow.org/country/>
+PREFIX person: <http://shadow.org/person/>
+PREFIX relationship: <http://shadow.org/relationship/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+INSERT {
+	person:person48 person:has_Date "1987-01-01T00:00:00-02:00"^^xsd:dateTime.
+}
+WHERE {
+	person:person48 ?p ?o.
+}
+================================================
+PREFIX country: <http://shadow.org/country/>
+PREFIX person: <http://shadow.org/person/>
+PREFIX relationship: <http://shadow.org/relationship/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+INSERT {
+	country:country60798 country:has_Label "Việt Nam".
+}
+WHERE {
+	country:country60798 ?p ?o.
+}
+

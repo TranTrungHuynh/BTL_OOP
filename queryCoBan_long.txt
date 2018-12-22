@@ -7,7 +7,7 @@ WHERE {
 	?subject organization:has_Headquarter "Delhi, India".
 }
 ______________
-đưa ra thời gian tổ chức sự kiện International Water Week:
+đưa ra thời gian tổ chức sự kiện International Water Week: ===================
 PREFIX event: <http://shadow.org/event>
 SELECT ?object
 WHERE {
@@ -15,7 +15,7 @@ WHERE {
 	?subject event:has_Date ?object.
 }
 ______________
-đưa ra tên và thời gian diễn ra của tối đa 10 sự kiện
+đưa ra tên và thời gian diễn ra của tối đa 10 sự kiện====================
 PREFIX event: <http://shadow.org/event>
 SELECT ?name ?time
 WHERE {

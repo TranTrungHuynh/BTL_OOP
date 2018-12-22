@@ -1,18 +1,18 @@
-1. Những sự kiện nào được quản lý bởi tổ chức BlackBerry và được chuẩn bị ở đất nước Cape Verde
-PREFIX country: <http://shadow.org/country/>
-PREFIX organization: <http://shadow.org/organization/>
-PREFIX relationship: <http://shadow.org/relationship/>
+1.Đưa ra những đất nước chuẩn bị sự kiện Industrial Components & Subcontracting Vietnam Hanoi vào tháng Nov
 PREFIX event: <http://shadow.org/event/>
+PREFIX relationship: <http://shadow.org/relationship/>
+PREFIX country: <http://shadow.org/country/>
+PREFIX time: <http://shadow.org/time/>
 	SELECT ?object
 	WHERE {
-    ?event event:has_Label ?object.
-    ?event relationship:managed ?organization .
-  	?organization organization:has_Label "BlackBerry" .
-    ?event relationship:prepared ?country .
-    ?country country:has_Label "Cape Verde" .
+    ?event event:has_Label "Industrial Components & Subcontracting Vietnam Hanoi".
+	?event relationship:organization ?country.
+    ?country country:has_Label ?object.
+    ?event relationship:take_Place_On ?time.
+    ?time time:has_Label ?date.
+    FILTER (regex(?date,"Nov"))
 }
-
-2. Những người tham gia sự kiện Vietbuild Home diễn ra ở Seattle, United States
+2. Đưa ra những người chuẩn bị sự kiện Vietbuild Home diễn ra ở Italy hoặc Indonesia
 PREFIX person: <http://shadow.org/person/>
 PREFIX relationship: <http://shadow.org/relationship/>
 PREFIX event: <http://shadow.org/event/>
@@ -20,22 +20,20 @@ PREFIX location: <http://shadow.org/location/>
 	SELECT ?object
 	WHERE {
     ?person person:has_Label ?object.
-    ?person relationship:practice ?event .
+    ?person relationship:prepare ?event .
     ?event event:has_Label "Vietbuild Home" .
     ?event relationship:take_Place_Of ?location.
-    ?location location:has_Label "Seattle, United States" .
+    ?location location:has_Label ?loca.
+    FILTER (regex(?loca,"Italy")||regex(?loca,"Indonesia"))
 }
-
-3. Tổ chức Samsung Group tổ chức những sựu kiện nào vào Feb. 21, 1993
-PREFIX event: <http://shadow.org/event/>
+3. Đưa ra những người là Assistant Professor đến thăm Ấn Độ
+PREFIX person: <http://shadow.org/person/>
 PREFIX relationship: <http://shadow.org/relationship/>
-PREFIX organization: <http://shadow.org/organization/>
-PREFIX time: <http://shadow.org/time/>
+PREFIX country: <http://shadow.org/country/>
 	SELECT ?object
 	WHERE {
-	?organization organization:has_Label "Samsung Group".
-    ?organization relationship:organization ?event.
-    ?event event:has_Label ?object.
-    ?event relationship:take_Place_On ?time.
-    ?time time:has_Label "Feb. 21, 1993".
-	}	
+     ?person person:has_Label ?object.
+     ?person person:has_Job "Assistant Professor".
+     ?person relationship:visit ?country .
+     ?country country:has_Label "Ấn Độ". 
+}

@@ -1,27 +1,31 @@
-﻿
-đưa ra tên tổ chức ở Hanoi và được thành lập sau 1976.
-PREFIX organization: <http://shadow.org/organization/>
-SELECT ?object
-WHERE {
-	?subject organization:has_Label ?object.
-	?subject organization:has_Headquarter "Hanoi, Vietnam".
-	?subject organization:has_Date ?date.
- 
-	FILTER (year(?date) <= 1976)
+﻿đưa ra time mà Jamari Whitney đầu tư vào đất nước mà đất nước đó bắt đầu có điện ?.
 
-}
-
-
-Đưa ra tên 5 nước ở châu á và có event "Qs World Grad School Tour Ho Chi Minh City"
+PREFIX person: <http://shadow.org/person/>
 PREFIX country: <http://shadow.org/country/>
-PREFIX event: <http://shadow.org/event/>
-				SELECT DISTINCT ?object
-				WHERE {
-				?subject ?predicate "Asia".
-				?subject event:has_Label "Qs World Grad School Tour Ho Chi Minh City".
-				?subject country:has_Label ?object.
+PREFIX time: <http://shadow.org/time/>
+PREFIX relationship: <http://shadow.org/relationship/>
+
+SELECT *
+WHERE {
+    ?time time:has_Label ?object.
+    ?subject person:has_Job "Research Assistant II".
+    ?subject relationship:invest ?country.
+    ?country relationship:have_Electricity ?time.
+    
 }
-LIMIT 5
+người được event "VietFood" với mô tả "8 năm tổ chức một lần "  mời tham gia đã học ở nơi có mô tả như nào.
 
+PREFIX person: <http://shadow.org/person/>
+PREFIX event: <http://shadow.org/event/>
+PREFIX relationship: <http://shadow.org/relationship/>
+PREFIX country: <http://shadow.org/country/>
+PREFIX location: <http://shadow.org/location/>
 
-
+SELECT *
+WHERE {
+    ?location location:has_Description ?object.
+    ?subject event:has_Label "VietFood".
+  	?subject event:has_Description "8 năm tổ chức môt lần".
+    ?subject relationship:welcome ?person.
+    ?person relationship:study ?location.
+    

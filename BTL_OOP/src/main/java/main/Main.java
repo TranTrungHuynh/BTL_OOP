@@ -25,7 +25,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		int numberOfEntity = 5000;
-		int numberOfRelationship = 7000;
+		int numberOfRelationship = 10000;
 		
 		// Get list Entity
 		CreateRandomEntity cre = new CreateRandomEntity();
@@ -87,26 +87,26 @@ public class Main {
 		long start = System.currentTimeMillis();
 		
 		/*==============Upload Entity data to server=========*/
-		createIRIStatement.createIRIPerson(listPerson);
-		createIRIStatement.createIRICountry(listCountry);
-		createIRIStatement.createIRIEvent(listEvent);
-		createIRIStatement.createIRILocation(listLocation);
-		createIRIStatement.createIRIOrganization(listOrganization);
-		createIRIStatement.createIRITime(listTime);
-		listEntity.clear();
-		
-		
-		long end1 = System.currentTimeMillis();
-		System.out.println("Time 1 = " + (end1-start));
-		
-		/*============== Upload Relationship ===================*/
-		createIRIStatement.uploadRelationData(numberOfRelationship);
-		
-		long end2 = System.currentTimeMillis();
-		System.out.println("\nTime Add = " + (end2-start));
+//		createIRIStatement.createIRIPerson(listPerson);
+//		createIRIStatement.createIRICountry(listCountry);
+//		createIRIStatement.createIRIEvent(listEvent);
+//		createIRIStatement.createIRILocation(listLocation);
+//		createIRIStatement.createIRIOrganization(listOrganization);
+//		createIRIStatement.createIRITime(listTime);
+//		listEntity.clear();
+//		
+//		
+//		long end1 = System.currentTimeMillis();
+//		System.out.println("Time 1 = " + (end1-start));
+//		
+////		/*============== Upload Relationship ===================*/
+//		createIRIStatement.uploadRelationData(numberOfRelationship);
+//////		
+//		long end2 = System.currentTimeMillis();
+//		System.out.println("\nTime Add = " + (end2-start));
 		
 		/*============== Query Data ===================*/
-		checkWriteFile = writeFile.writeFileQuery("./ResultQueryBasic.txt", query.queryBasic());
+//		checkWriteFile = writeFile.writeFileQuery("./ResultQueryBasic.txt", query.queryBasic());
 //		if(checkWriteFile)
 //		{
 //			System.out.println("Write file ResultQueryBasic.txt success !");
@@ -116,15 +116,15 @@ public class Main {
 //			System.out.println("Error write ResultQueryBasic.txt file !");
 //		}
 		
-//		checkWriteFile = writeFile.writeFileQuery("./ResultQueryAdvance.txt", query.queryAdvance());
-//		if(checkWriteFile)
-//		{
-//			System.out.println("Write file ResultQueryAdvance.txt success !");
-//		}
-//		else
-//		{
-//			System.out.println("Error write ResultQueryAdvance.txt file !");
-//		}
+		checkWriteFile = writeFile.writeFileQuery("./ResultQueryAdvance.txt", query.queryAdvance());
+		if(checkWriteFile)
+		{
+			System.out.println("Write file ResultQueryAdvance.txt success !");
+		}
+		else
+		{
+			System.out.println("Error write ResultQueryAdvance.txt file !");
+		}
 		query.closeConnectionQuery();
 
 		System.exit(0);

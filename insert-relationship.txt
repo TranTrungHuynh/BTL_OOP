@@ -1,0 +1,9 @@
+PREFIX person: <http://shadow.org/person/>	
+PREFIX location: <http://shadow.org/location/>
+PREFIX relationship: <http://shadow.org/relationship/>
+INSERT {
+	person:person67 relationship:visit location:location69.
+}
+WHERE {
+	person:person67 ?predicate ?.
+}
