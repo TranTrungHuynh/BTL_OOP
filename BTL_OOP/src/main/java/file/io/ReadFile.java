@@ -1,4 +1,4 @@
-package graphdb;
+package file.io;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -8,16 +8,7 @@ import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.ValueFactory;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
 
-import writefile.io.FileNameConstant;
-
 public class ReadFile extends FileNameConstant {
-		private Connection connection = new Connection();
-		private RepositoryConnection conn = connection.getRepositoryConnection();
-		private ValueFactory vf = conn.getValueFactory();
-	
-		private final String RELATIONSHIP = "http://shadow.org/relationship/";
-		private IRI relationIRI;
-		
 		Scanner sc;
 		String line="";
 		
@@ -44,38 +35,38 @@ public class ReadFile extends FileNameConstant {
 		protected ArrayList<String> listTimmeName;
 		
 		// Relation
-		protected ArrayList<IRI> listRelationPersonCountry;
-		protected ArrayList<IRI> listRelationPersonTime;
-		protected ArrayList<IRI> listRelationPersonPerson;
-		protected ArrayList<IRI> listRelationPersonOrganization;
-		protected ArrayList<IRI> listRelationPersonLocation;
-		protected ArrayList<IRI> listRelationPersonEvent;
+		protected ArrayList<String> listRelationPersonCountry;
+		protected ArrayList<String> listRelationPersonTime;
+		protected ArrayList<String> listRelationPersonPerson;
+		protected ArrayList<String> listRelationPersonOrganization;
+		protected ArrayList<String> listRelationPersonLocation;
+		protected ArrayList<String> listRelationPersonEvent;
 		                    
-		protected ArrayList<IRI> listRelationEventCountry;
-		protected ArrayList<IRI> listRelationEventEvent;
-		protected ArrayList<IRI> listRelationEventLocation;
-		protected ArrayList<IRI> listRelationEventOrganization;
-		protected ArrayList<IRI> listRelationEventPerson;
-		protected ArrayList<IRI> listRelationEventTime;
+		protected ArrayList<String> listRelationEventCountry;
+		protected ArrayList<String> listRelationEventEvent;
+		protected ArrayList<String> listRelationEventLocation;
+		protected ArrayList<String> listRelationEventOrganization;
+		protected ArrayList<String> listRelationEventPerson;
+		protected ArrayList<String> listRelationEventTime;
 		                    
-		protected ArrayList<IRI> listRelationLocationCountry;
-		protected ArrayList<IRI> listRelationLocationPerson;
-		protected ArrayList<IRI> listRelationLocationOrganization;
-		protected ArrayList<IRI> listRelationLocationLocation;
-		protected ArrayList<IRI> listRelationLocationTime;
+		protected ArrayList<String> listRelationLocationCountry;
+		protected ArrayList<String> listRelationLocationPerson;
+		protected ArrayList<String> listRelationLocationOrganization;
+		protected ArrayList<String> listRelationLocationLocation;
+		protected ArrayList<String> listRelationLocationTime;
 		                    
-		protected ArrayList<IRI> listRelationOrganizationCountry;
-		protected ArrayList<IRI> listRelationOrganizationTime;
-		protected ArrayList<IRI> listRelationOrganizationLocation;
-		protected ArrayList<IRI> listRelationOrganizationEvent;
-		protected ArrayList<IRI> listRelationOrganizationPerson;
+		protected ArrayList<String> listRelationOrganizationCountry;
+		protected ArrayList<String> listRelationOrganizationTime;
+		protected ArrayList<String> listRelationOrganizationLocation;
+		protected ArrayList<String> listRelationOrganizationEvent;
+		protected ArrayList<String> listRelationOrganizationPerson;
 		                    
-		protected ArrayList<IRI> listRelationCountryCountry;
-		protected ArrayList<IRI> listRelationCountryTime;
-		protected ArrayList<IRI> listRelationCountryPerson;
-		protected ArrayList<IRI> listRelationCountryEvent;
-		protected ArrayList<IRI> listRelationCountryOrganization;
-		protected ArrayList<IRI> listRelationCountryLocation;
+		protected ArrayList<String> listRelationCountryCountry;
+		protected ArrayList<String> listRelationCountryTime;
+		protected ArrayList<String> listRelationCountryPerson;
+		protected ArrayList<String> listRelationCountryEvent;
+		protected ArrayList<String> listRelationCountryOrganization;
+		protected ArrayList<String> listRelationCountryLocation;
 		
 		public ReadFile()
 		{
@@ -104,38 +95,38 @@ public class ReadFile extends FileNameConstant {
 			listTimmeName               = new ArrayList<String>();
 			
 			// Relation
-			listRelationPersonCountry        = new ArrayList<IRI>();
-			listRelationPersonTime           = new ArrayList<IRI>();
-			listRelationPersonEvent          = new ArrayList<IRI>();
-			listRelationPersonLocation       = new ArrayList<IRI>();
-			listRelationPersonOrganization   = new ArrayList<IRI>();
-			listRelationPersonPerson         = new ArrayList<IRI>();
+			listRelationPersonCountry        = new ArrayList<String>();
+			listRelationPersonTime           = new ArrayList<String>();
+			listRelationPersonEvent          = new ArrayList<String>();
+			listRelationPersonLocation       = new ArrayList<String>();
+			listRelationPersonOrganization   = new ArrayList<String>();
+			listRelationPersonPerson         = new ArrayList<String>();
 			                                                 
-			listRelationEventCountry         = new ArrayList<IRI>();
-			listRelationEventEvent           = new ArrayList<IRI>();
-			listRelationEventLocation        = new ArrayList<IRI>();
-			listRelationEventOrganization    = new ArrayList<IRI>();
-			listRelationEventPerson          = new ArrayList<IRI>();
-			listRelationEventTime            = new ArrayList<IRI>();
+			listRelationEventCountry         = new ArrayList<String>();
+			listRelationEventEvent           = new ArrayList<String>();
+			listRelationEventLocation        = new ArrayList<String>();
+			listRelationEventOrganization    = new ArrayList<String>();
+			listRelationEventPerson          = new ArrayList<String>();
+			listRelationEventTime            = new ArrayList<String>();
 			                                                 
-			listRelationLocationCountry      = new ArrayList<IRI>();
-			listRelationLocationLocation     = new ArrayList<IRI>();
-			listRelationLocationOrganization = new ArrayList<IRI>();
-			listRelationLocationPerson       = new ArrayList<IRI>();
-			listRelationLocationTime         = new ArrayList<IRI>();
+			listRelationLocationCountry      = new ArrayList<String>();
+			listRelationLocationLocation     = new ArrayList<String>();
+			listRelationLocationOrganization = new ArrayList<String>();
+			listRelationLocationPerson       = new ArrayList<String>();
+			listRelationLocationTime         = new ArrayList<String>();
 			                                                 
-			listRelationOrganizationCountry  = new ArrayList<IRI>();
-			listRelationOrganizationEvent    = new ArrayList<IRI>();
-			listRelationOrganizationLocation = new ArrayList<IRI>();
-			listRelationOrganizationPerson   = new ArrayList<IRI>();
-			listRelationOrganizationTime     = new ArrayList<IRI>();
+			listRelationOrganizationCountry  = new ArrayList<String>();
+			listRelationOrganizationEvent    = new ArrayList<String>();
+			listRelationOrganizationLocation = new ArrayList<String>();
+			listRelationOrganizationPerson   = new ArrayList<String>();
+			listRelationOrganizationTime     = new ArrayList<String>();
 			                                                 
-			listRelationCountryCountry       = new ArrayList<IRI>();
-			listRelationCountryEvent         = new ArrayList<IRI>();
-			listRelationCountryLocation      = new ArrayList<IRI>();
-			listRelationCountryOrganization  = new ArrayList<IRI>();
-			listRelationCountryPerson        = new ArrayList<IRI>();
-			listRelationCountryTime          = new ArrayList<IRI>();
+			listRelationCountryCountry       = new ArrayList<String>();
+			listRelationCountryEvent         = new ArrayList<String>();
+			listRelationCountryLocation      = new ArrayList<String>();
+			listRelationCountryOrganization  = new ArrayList<String>();
+			listRelationCountryPerson        = new ArrayList<String>();
+			listRelationCountryTime          = new ArrayList<String>();
 			
 			// File Entity
 			readFilePerson();
@@ -179,7 +170,6 @@ public class ReadFile extends FileNameConstant {
 			readFileRelationCountryPerson();
 			readFileRelationCountryTime();
 			
-			closeConnectionReadFile();
 		}
 		
 		/*=============================================Read File Relation=====================================*/
@@ -190,8 +180,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationCountryTime.add(relationIRI);
+					listRelationCountryTime.add(line);
 				}
 				sc.close();
 			}
@@ -207,8 +196,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationCountryPerson.add(relationIRI);
+					listRelationCountryPerson.add(line);
 				}
 				sc.close();
 			}
@@ -224,8 +212,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationCountryOrganization.add(relationIRI);
+					listRelationCountryOrganization.add(line);
 				}
 				sc.close();
 			}
@@ -241,8 +228,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationCountryLocation.add(relationIRI);
+					listRelationCountryLocation.add(line);
 				}
 				sc.close();
 			}
@@ -258,8 +244,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationCountryEvent.add(relationIRI);
+					listRelationCountryEvent.add(line);
 				}
 				sc.close();
 			}
@@ -276,8 +261,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationCountryCountry.add(relationIRI);
+					listRelationCountryCountry.add(line);
 				}
 				sc.close();
 			}
@@ -295,8 +279,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationOrganizationTime.add(relationIRI);
+					listRelationOrganizationTime.add(line);
 				}
 				sc.close();
 			}
@@ -312,8 +295,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationOrganizationPerson.add(relationIRI);
+					listRelationOrganizationPerson.add(line);
 				}
 				sc.close();
 			}
@@ -329,8 +311,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationOrganizationLocation.add(relationIRI);
+					listRelationOrganizationLocation.add(line);
 				}
 				sc.close();
 			}
@@ -346,8 +327,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationOrganizationEvent.add(relationIRI);
+					listRelationOrganizationEvent.add(line);
 				}
 				sc.close();
 			}
@@ -363,8 +343,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationOrganizationCountry.add(relationIRI);
+					listRelationOrganizationCountry.add(line);
 				}
 				sc.close();
 			}
@@ -381,8 +360,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationLocationTime.add(relationIRI);
+					listRelationLocationTime.add(line);
 				}
 				sc.close();
 			}
@@ -398,8 +376,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationLocationPerson.add(relationIRI);
+					listRelationLocationPerson.add(line);
 				}
 				sc.close();
 			}
@@ -415,8 +392,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationLocationOrganization.add(relationIRI);
+					listRelationLocationOrganization.add(line);
 				}
 				sc.close();
 			}
@@ -432,8 +408,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationLocationLocation.add(relationIRI);
+					listRelationLocationLocation.add(line);
 				}
 				sc.close();
 			}
@@ -449,8 +424,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationLocationCountry.add(relationIRI);
+					listRelationLocationCountry.add(line);
 				}
 				sc.close();
 			}
@@ -467,8 +441,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationEventTime.add(relationIRI);
+					listRelationEventTime.add(line);
 				}
 				sc.close();
 			}
@@ -484,8 +457,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationEventPerson.add(relationIRI);
+					listRelationEventPerson.add(line);
 				}
 				sc.close();
 			}
@@ -501,8 +473,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationEventOrganization.add(relationIRI);
+					listRelationEventOrganization.add(line);
 				}
 				sc.close();
 			}
@@ -518,8 +489,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationEventLocation.add(relationIRI);
+					listRelationEventLocation.add(line);
 				}
 				sc.close();
 			}
@@ -535,8 +505,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationEventEvent.add(relationIRI);
+					listRelationEventEvent.add(line);
 				}
 				sc.close();
 			}
@@ -552,8 +521,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationEventCountry.add(relationIRI);
+					listRelationEventCountry.add(line);
 				}
 				sc.close();
 			}
@@ -572,8 +540,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationPersonPerson.add(relationIRI);
+					listRelationPersonPerson.add(line);
 				}
 				sc.close();
 			}
@@ -589,8 +556,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationPersonOrganization.add(relationIRI);
+					listRelationPersonOrganization.add(line);
 				}
 				sc.close();
 			}
@@ -606,8 +572,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationPersonLocation.add(relationIRI);
+					listRelationPersonLocation.add(line);
 				}
 				sc.close();
 			}
@@ -623,8 +588,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationPersonEvent.add(relationIRI);
+					listRelationPersonEvent.add(line);
 				}
 				sc.close();
 			}
@@ -640,8 +604,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationPersonTime.add(relationIRI);
+					listRelationPersonTime.add(line);
 				}
 				sc.close();
 			}
@@ -657,8 +620,7 @@ public class ReadFile extends FileNameConstant {
 				while(sc.hasNextLine())
 				{
 					line = sc.nextLine();
-					relationIRI = vf.createIRI(RELATIONSHIP, line);
-					listRelationPersonCountry.add(relationIRI);
+					listRelationPersonCountry.add(line);
 				}
 				sc.close();
 			}
@@ -837,9 +799,4 @@ public class ReadFile extends FileNameConstant {
 				Ex.printStackTrace();
 			}
 		}
-		
-	public void closeConnectionReadFile()
-	{
-		conn.close();
-	}
 }

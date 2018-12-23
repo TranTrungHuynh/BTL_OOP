@@ -1,257 +1,77 @@
 *********************** Query 1 ******************************
-object: Begin Edu Fair-Ho Chi Minh City (Autumn  Edition)
-object: Crypto Expo Asia
-object: ENTECH
-object: Food & Hotel Vietnam (FHV)
-object: HVACR Vietnam
-object: HortEx Vietnam
-object: Intermold Vietnam
-object: International Conference On Electrical Engineering And Electronics Communication System (ICEEECS)
-object: International Conference on BioMedical Technology (ICBMT)
-object: International Conference on Language, Education, Humanities and Innovation (ICLEHI)
-object: International Conference on Medical Medicine and Health Sciences (MMHS)
-object: International Exhibition VIETBUILD HANOI - Phase III
-object: International Exhibition of Construction Technology Equipment Materials and Minning Industry (Contech Vietnam)
-object: International Water Week
-object: Lifestyle Vietnam
-object: Mekong Beauty Show (MBS)
-object: Oil & Gas Tech Asia (OGTA)
-object: Railway Infrastructure Summit Hanoi
-object: Seamless Vietnam
-object: Shop & Store Vietnam (SSV)
-object: Solar Show Vietnam
-object: Sugarex Vietnam
-object: VietWater
-object: Vietnam  Foodexpo
-object: Vietnam Foodexpo
-object: Vietnam International Advertising Equipment and Technology Exhibition (VIETAD)
-object: Vietnam International Franchise & Retail Exhibition (VIETRF)
-object: Vietnam International Jewelry Fair (VIJF)
-object: Vietnam International Machinery Fair (VIMAF)
-object: Vietnam International Trade Fair (Vietnam Expo)
-object: Wire & Cable Show Hanoi (Wire & Cable Show 2018)
-object: Wire & Cable Show Vietnam (W C V)
-object: World Glasstech Vietnam
+object: Vietnam International Maternity Baby and Kids Fair
 
-Time Query = 68
+Time Query = 8
 
 
 
 *********************** Query 2 ******************************
-object: São Tomé và Príncipe
-object: Ireland
-object: Somalia
-object: San Marino
-object: Uruguay
-object: Nhật Bản
-object: Gabon
-object: Syria
-object: ﻿Estonia
-object: Georgia
-object: Cộng hòa Séc
-object: Réunion (Pháp)
-object: Ba Lan
-object: Honduras
-object: Dominica
-object: Guinea Xích đạo
-object: Namibia
-object: Eritrea
-object: Azerbaijan
-object: Papua New Guinea
-object: Barbados
-object: Mali
-object: Thái Lan
-object: Guam
-object: Quần đảo Nam Georgia và Nam Sandwich
-object: Đông Timor
-object: Grenada
-object: Senegal
-object: Tuvalu
-object: Zambia
-object: Quần đảo Virgin thuộc Anh
-object: Afghanistan
-object: ﻿Belarus
-object: Liên bang Micronesia
-object: Nam Phi
-object: Guatemala
-object: Síp
-object: Mauritius
-object: Maldives
-object: Bonaire
-object: Thổ Nhĩ Kỳ
-object: Cuba
-object: Guadeloupe
-object: Polynesia thuộc Pháp
-object: Saint Pierre và Miquelon
+object: Samoa thuộc Mỹ
+
+Time Query = 8
+
+
+
+*********************** Query 3 ******************************
 
 Time Query = 7
 
 
 
-*********************** Query 3 ******************************
-object: Ali Montes
-object: Amiah Mayo
-object: Ariella Schneider
-object: Brennen Heath
-object: Caitlyn Boyle
-object: Cale Jennings
-object: Cassandra Mcclain
-object: Damien Hogan
-object: Dayami House
-object: Edward Roach
-object: Giovani Harrington
-object: Heather Trevino
-object: Jaylan Lynn
-object: Jerry Martin
-object: Kaliyah Lam
-object: Karley Booth
-object: Kelsey Blevins
-object: Keyon Buck
-object: Layne Snyder
-object: Leslie Braun
-object: Madalyn Harding
-object: Maleah Harvey
-object: Mark Lamb
-object: Mathew Fuller
-object: Milton Webster
-object: Nyla Huynh
-object: Rafael Watts
-object: Salma Santana
-object: Seamus Mendez
-object: Sophie Mccall
-object: Tatum Lee
-object: Warren Neal
-object: Xiomara Larson
-object: Zachary Crane
-
-Time Query = 6
-
-
-
 *********************** Query 4 ******************************
-object: Lane Bowen
-object: Chaya Casey
-object: Amani Gould
-object: Damari Melendez
-object: Jon Wu
-object: Paul Larsen
+object: Mara Franklin
 
-Time Query = 4
+Time Query = 17
 
 
 
 *********************** Query 5 ******************************
-object: Milagros Wang
-object: King Rivera
-object: Reginald Baldwin
-object: Ismael Mckenzie
-object: Tyson Kirk
-object: Chaya Casey
-object: Kyler Little
-object: Damian Booker
-object: Theodore Gordon
-object: Bryson Hodge
+object: Kolby Farrell
 
-Time Query = 3
+Time Query = 13
 
 
 
 *********************** Query 6 ******************************
-object: Greta Bird
-object: Gianna English
-object: Jazlynn Sandoval
-object: Valeria Hodges
-object: Bridget Shah
-object: Jonah Dillon
-object: Adriel Nguyen
-object: Matias Bell
-object: Boston Horn
-object: Tomas Baird
-object: Fernando Cox
-object: Darwin Espinoza
-object: Kamari Coffey
-object: Jaylah Thornton
-object: Raul Ballard
-object: Camren Fox
-object: Timothy Mclaughlin
-object: Gustavo Bullock
-object: Tristan Pace
-object: Darius Koch
-object: Abbey Merritt
-object: Luis Cortez
-object: Beckham Mejia
-object: Reagan Hatfield
-object: Aria Mclean
-object: Philip Williamson
-object: Hayden Yates
-object: Alden Curry
-object: Alyssa Fletcher
-object: Kayden Goodwin
-object: Lyric Hendricks
-object: Veronica Bennett
-object: Xander Davila
 
-Time Query = 8
+Time Query = 5
 
 
 
 *********************** Query 7 ******************************
 object: 100 People: A World Portrait
 object: 2Mayns Events
-object: 3HS India
 object: 3M
-object: AT&T
 object: Action for Happiness
 object: Adidas
 object: Adobe Systems
-object: African Development Bank
 object: African Monitor
+object: African Union
+object: All Party Parliamentary Group on Wellbeing Economics (UK)
+object: Allianz
 
-Time Query = 113
+Time Query = 13
 
 
 
 *********************** Query 8 ******************************
-object: Annabelle Soto
+object: Barrett Pope
 
-Time Query = 4
+Time Query = 7
 
 
 
 *********************** Query 9 ******************************
-object: Bergen, Norway
-object: Wichita, United States
-object: Port of Spain, Trinidad and Tobago
-object: Singapore, Singapore
-object: Siem Reap, Cambodia
-object: Ulan Bator, Mongolia
-object: Dushanbe, Tajikistan
-object: Hamilton, United Kingdom
-object: Nagpur, India
-object: Medina, Saudi Arabia
-object: Kelowna, Canada
-object: Basel, Switzerland
-object: Johor Bahru, Malaysia
-object: Toyama, Japan
-object: Darwin, Australia
+object: Göteborg, Sweden
 
-Time Query = 12
+Time Query = 14
 
 
 
 *********************** Query 10 ******************************
-object: Rafael Watts
-object: Kayden Goodwin
-object: Kamryn Scott
-object: Luciano Kaufman
-object: Kimora Mendoza
-object: Ernesto Stark
-object: Danica Walker
-object: Arielle Perez
-object: Callie Calhoun
-object: Yoselin Park
+object: Ayden Rice
 
-Time Query = 3
+Time Query = 20
 
 
 

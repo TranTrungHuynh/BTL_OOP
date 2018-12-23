@@ -1,11 +1,8 @@
 package model;
 
 import java.util.Date;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Entity {
-//	private static final AtomicInteger count = new AtomicInteger(0);
-//	protected final int id;
 	protected String name;
 	protected String description;
 	protected String link;
@@ -13,21 +10,15 @@ public class Entity {
 	
 	public Entity() {
 		super();
-//		id = count.incrementAndGet();
 	}
 
 	public Entity(String name, String description, String link, Date date) {
 		super();
-//		this.id = count.incrementAndGet();
 		this.name = name;
 		this.description = description;
 		this.link = link;
 		this.date = date;
 	}
-
-//	public int getId() {
-//		return id;
-//	}
 
 	public String getName() {
 		return name;

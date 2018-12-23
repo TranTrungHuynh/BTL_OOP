@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-import graphdb.ReadFile;
+import file.io.ReadFile;
 import model.Entity;
 
 public class CreateRandomEntity extends ReadFile {
@@ -17,6 +17,8 @@ public class CreateRandomEntity extends ReadFile {
 	CreateLocation createLocation;
 	CreateOrganization createOrganization;
 	CreateTime createTime;
+	
+	
 	
 	public CreateRandomEntity()
 	{

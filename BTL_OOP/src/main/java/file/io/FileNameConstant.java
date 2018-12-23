@@ -1,4 +1,4 @@
-package writefile.io;
+package file.io;
 
 public class FileNameConstant {
 	// File Entity
