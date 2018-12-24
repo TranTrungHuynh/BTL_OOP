@@ -3,56 +3,56 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <package id="1" language="java" name="model" project="BTL_OOP" file="/BTL_OOP/src/main/java/model" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="395" y="448"/>    
+    <position height="-1" width="-1" x="705" y="423"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <package id="2" language="java" name="main" project="BTL_OOP" file="/BTL_OOP/src/main/java/main" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="753" y="140"/>    
+    <position height="-1" width="-1" x="467" y="104"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <package id="3" language="java" name="graphdb" project="BTL_OOP" file="/BTL_OOP/src/main/java/graphdb" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="621" y="270"/>    
+    <position height="-1" width="-1" x="512" y="243"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <package id="4" language="java" name="file.io" project="BTL_OOP" file="/BTL_OOP/src/main/java/file/io" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="829" y="425"/>    
+    <position height="-1" width="-1" x="334" y="424"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <package id="5" language="java" name="create.entity" project="BTL_OOP" file="/BTL_OOP/src/main/java/create/entity" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="626" y="395"/>    
+    <position height="-1" width="-1" x="526" y="384"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <dependency id="6">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="7">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="8">    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="5"/>  
   </dependency>  
-  <dependency id="7">    
+  <dependency id="9">    
     <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="3"/>  
   </dependency>  
-  <dependency id="8">    
+  <dependency id="10">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="11">    
     <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="4"/>  
   </dependency>  
-  <dependency id="9">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
-  <dependency id="10">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <dependency id="11">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
   <dependency id="12">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="1"/>  
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="4"/>  
   </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    

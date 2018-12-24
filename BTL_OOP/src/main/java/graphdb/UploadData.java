@@ -12,7 +12,6 @@ import org.eclipse.rdf4j.model.vocabulary.RDF;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
 
 import create.entity.CreateRandomEntity;
-import file.io.ReadFile;
 import model.Entity;
 import model.Event;
 import model.Location;
@@ -21,7 +20,7 @@ import model.Person;
 import model.Time;
 import model.Country;
 
-public class uploadData extends CreateIRI {
+public class UploadData extends CreateIRIRelation {
 
 	private Connection connection;
 	private RepositoryConnection conn;
@@ -43,7 +42,7 @@ public class uploadData extends CreateIRI {
 	private ArrayList<IRI> listIRITime;
 	private ArrayList<IRI> listIRILocation;
 
-	public uploadData()
+	public UploadData()
 	{
 		super();
 

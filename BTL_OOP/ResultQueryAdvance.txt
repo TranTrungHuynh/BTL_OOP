@@ -1,77 +1,532 @@
 *********************** Query 1 ******************************
-object: Vietnam International Maternity Baby and Kids Fair
+object: AAE Higher Education Fair
+object: AAE Higher Education Spring Fair
+object: APCDA Conference
+object: Advanced research on Computer, Civil, Electrical, and Petroleum Engineering International Conference (ACCEPIC)
+object: Asia Coatings Congress  Vietnam
+object: Asia Expo Ho Chi Minh City
+object: Asia Tour Ho Chi Minh City
+object: Automechanika Ho Chi Minh City (AMHCMC)
+object: Begin Edu Fair- Hanoi (Autumn  Edition)
+object: Coaltrans Emerging Asian Coal Markets
+object: Concrete Expo
+object: Conference on InterAsian Connections
+object: Crypto Expo Asia
+object: DevDay Da Nang (Dev Day)
+object: EAI International Conference on Heterogeneous Networking for Quality, Reliability, Security and Robustness (Qshine)
+object: ENTECH
+object: EuroSphere
+object: Fig Working Week Hanoi
+object: Fire Safety & Rescue
+object: Food & Hotel Hanoi
+object: Food & Hotel Vietnam (FHV)
+object: Hanoi Plas Vietnam
+object: HortEx Vietnam
+object: INDUSTRIAL AUTOMATION FIESTA (IAF)
+object: INTERDYE ASIA
+object: Industrial Components & Subcontracting Vietnam Hanoi
+object: Industrial Components & Subcontracting Vietnam Ho Chi Minh City
+object: International Conference On Electrical Engineering And Electronics Communication System (ICEEECS)
+object: International Conference On Environment And Renewable Energy (ICERE)
+object: International Conference on BioMedical Technology (ICBMT)
+object: International Conference on Business Management Economics Communication Tourism Social Sciences & Humanities (BECTSH)
+object: International Conference on Computer Research and Development (ICCRD)
+object: International Conference on Machine Learning and Soft Computing (ICMLSC)
+object: International Conference on Materials Engineering and Applications (ICMEA)
+object: International Conference on Medical Medicine and Health Sciences (MMHS)
+object: International Conference on Petroleum and Petrochemical Engineering (ICPPE)
+object: International Conference on Telecommunications (ICT)
+object: International Congress of the Asia Pacific Society of Infection Control (ICAPSIC)
+object: International Downstream-Tech Vietnam
+object: International Econometric Conference of Vietnam (IECV)
+object: International Exhibition VIETBUILD HANOI - Phase III
+object: International Exhibition of Construction Technology Equipment Materials and Minning Industry (Contech Vietnam)
+object: International Footwear & Leather Products Exhibition  Vietnam (IFLE Vietnam)
+object: International Jewelry + Watch Vietnam
+object: International Symposium on Information and Communication Technology (SoICT)
+object: International Water Week
+object: Linden Boarding School Tour
+object: Linden Fair Ho Chi Minh City
+object: MTA Vietnam
+object: Mekong Beauty Show (MBS)
+object: Power Southeast Asia (Vietnam) Conference and Exhibition (PSEAVIETNAM)
+object: ProPak Vietnam
+object: Qs World Grad School Tour
+object: Qs World Grad School Tour Ho Chi Minh City
+object: Railway Infrastructure Summit Hanoi
+object: Reconnaissance High Security Printing Asia
+object: Saigon Autotech & Accessories
+object: School & Office Expo (SCOFEX Vietnam)
+object: Seamless Vietnam
+object: Shop & Store Vietnam (SSV)
+object: Solar & Energy Storage World Vietnam (SESW)
+object: Solar Show Vietnam
+object: Sugarex Vietnam
+object: Telefilm 
+object: The International Exhibition on Machineries and Technologies of Agriculture - Forestry - Fishery (VIETNAM  GROWTECH)
+object: The Wind Show Vietnam
+object: VIETNAM EXPO
+object: VIETNAM INDUSTRIAL & MANUFACTURING FAIR
+object: Viet Beauty (vietbeauty)
+object: VietFood
+object: VietFood & Beverage - Vietnam
+object: Vietbuild Home
+object: Vietnam  Foodexpo
+object: Vietnam AutoExpo
+object: Vietnam Foodexpo
+object: Vietnam Int'l Cafe Show
+object: Vietnam International Advertising Equipment and Technology Exhibition
+object: Vietnam International Bicycle Exhibition (Vietnam Cycle)
+object: Vietnam International Electrical Technology & Equipment Exhibition (Vietnam ETE)
+object: Vietnam International Exhibition on Products, Equipment and Supplies for Pharmaceutical, Medical, Hospital and Rehabilitation (Vietnam Medi-Pharm 2017)
+object: Vietnam International Franchise & Retail Exhibition (VIETRF)
+object: Vietnam International Furniture & Home Accessories Fair (VIFA-EXPO)
+object: Vietnam International Jewelry Fair (VIJF)
+object: Vietnam International Trade Fair (Vietnam Expo)
+object: Vietnam Manufacturing Expo (VME)
+object: Vietnam Medi-Pharm Expo (MediPharm Expo)
+object: Vietnam Power Development Summit (VDPS)
+object: Vietnam Saigon Fabric & Garment Accessories Expo (SaigonFabric)
+object: Vietnam Tour Ho Chi Minh City
+object: Vietnam Two Wheels Vehicle International Exhibition (Vietnam Cycle)
+object: Vinamac Expo
+object: Wire & Cable Show Hanoi (Wire & Cable Show 2018)
+object: Wire & Cable Show Vietnam (W C V)
+object: World Conference on Personality (WCP)
+object: World Glasstech Vietnam
 
-Time Query = 8
+Time Query = 2712
 
 
 
 *********************** Query 2 ******************************
-object: Samoa thuộc Mỹ
+object: Guiana thuộc Pháp
+object: Hungary
+object: Pakistan
+object: Bolivia
+object: Cộng hòa dân chủ Congo
+object: Đức
+object: Malta
+object: Tây Sahara
+object: Áo
+object: Luxembourg
+object: Quần đảo Virgin thuộc Mỹ
+object: Kazakhstan
+object: Saint Lucia
+object: Saint Vincent và Grenadines
+object: Syria
+object: Cộng hòa Trung Phi
+object: Senegal
+object: Slovenia
+object: Anh
+object: Aruba
+object: Iran
+object: Serbia
+object: Saint Pierre và Miquelon
+object: Algeria
+object: Cộng hòa Congo
+object: Guinea-Bissau
+object: Quần đảo Bắc Mariana
+object: Mozambique
+object: Bhutan
+object: Bermuda
+object: Mexico
+object: Costa Rica
+object: Quần đảo Virgin thuộc Anh
+object: Azerbaijan
+object: Đông Timor
+object: Argentina
+object: Na Uy
+object: Ukraine
+object: Mauritania
+object: Libya
+object: Ý
+object: Lesotho
+object: Jamaica
+object: Jordan
+object: Panama
+object: Nepal
+object: Venezuela
 
-Time Query = 8
+Time Query = 2520
 
 
 
 *********************** Query 3 ******************************
+object: Abbigail Frank
+object: Abby Best
+object: Addyson Andrade
+object: Adonis Matthews
+object: Alanna Hoffman
+object: Alma Newman
+object: April Frederick
+object: Ariana Pratt
+object: Arturo Phelps
+object: Averi Melton
+object: Ayden Rice
+object: Bailey Villanueva
+object: Brent Berger
+object: Bria Potts
+object: Brisa Adams
+object: Caitlyn Boyle
+object: Cameron Cooke
+object: Carley Barrett
+object: Caroline Schwartz
+object: Cassandra Mcclain
+object: Cayden Vaughn
+object: Chloe Barr
+object: Claire Velez
+object: Clara Schmitt
+object: Coleman Stuart
+object: Corinne Deleon
+object: Dario Cantu
+object: Darwin Espinoza
+object: Davin Horton
+object: Dayami House
+object: Deshawn Moon
+object: Diamond Kent
+object: Faith Strickland
+object: Felix Skinner
+object: Finley Brandt
+object: Finnegan Miller
+object: Gracelyn Osborne
+object: Grant Garrison
+object: Grayson Wiggins
+object: Halle Joyce
+object: Harley Duffy
+object: Harper Young
+object: Hayden Hickman
+object: Hayden Yates
+object: Jaden David
+object: Jakobe Cline
+object: Jamarcus Aguirre
+object: Jameson Green
+object: Janelle Moore
+object: Jax Ellis
+object: Jaycee Frey
+object: Jefferson Frazier
+object: Jocelyn Griffin
+object: Johan Bailey
+object: Jon Wu
+object: Julianne Henry
+object: Juliet Higgins
+object: June Mcneil
+object: Kadence Mills
+object: Kailyn Pruitt
+object: Kallie Gaines
+object: Karina Cobb
+object: Kash Castillo
+object: Katherine Mccarty
+object: Kayleigh Jefferson
+object: Kellen Roth
+object: Kelsey Blevins
+object: Kolton Hardy
+object: Krystal Morgan
+object: Landon Myers
+object: Lauren Summers
+object: Leo Giles
+object: Leroy Hawkins
+object: Lewis Wilcox
+object: Liam Cisneros
+object: Lila Banks
+object: Lina Maynard
+object: Lizeth Robertson
+object: Lucia Bender
+object: Madalynn Joseph
+object: Maggie Mosley
+object: Malcolm Rowland
+object: Marcos Foley
+object: Mariah Woods
+object: Maribel Landry
+object: Maritza Murillo
+object: Mark Lamb
+object: Marshall Bradford
+object: Mateo Gay
+object: Miles Hart
+object: Moises Villegas
+object: Moses Wade
+object: Naima Decker
+object: Omari Ellison
+object: Pablo French
+object: Paul Larsen
+object: Paul Odonnell
+object: Phoebe Kelly
+object: Presley Murray
+object: Preston Atkins
+object: Raegan Flynn
+object: Ralph Dickerson
+object: Raul Ballard
+object: Reagan Hatfield
+object: Rebecca Hahn
+object: Rodrigo Guerra
+object: Ronnie Carrillo
+object: Salvador Ayala
+object: Sarah Small
+object: Seamus Mendez
+object: Selah Sanford
+object: Semaj Tanner
+object: Shawn Ramsey
+object: Shayna Romero
+object: Stacy Alvarez
+object: Stanley Dixon
+object: Tiffany Thompson
+object: Trenton Serrano
+object: Turner Holt
+object: Valery Simon
+object: Vaughn Parker
+object: Virginia Valenzuela
+object: Xiomara Larson
+object: Zachariah Johnston
+object: Zachary Crane
+object: Zavier Briggs
+object: Zayden Dennis
+object: Zechariah Bush
 
-Time Query = 7
+Time Query = 2416
 
 
 
 *********************** Query 4 ******************************
+object: Janelle Moore
+object: Mark Lamb
+object: Lucia Bender
+object: Grayson Wiggins
+object: Hayden Yates
+object: Reagan Hatfield
+object: Arturo Phelps
+object: Madalynn Joseph
+object: Jaycee Frey
+object: Zayden Dennis
+object: Cassandra Mcclain
+object: Abbigail Frank
+object: Faith Strickland
+object: Jocelyn Griffin
+object: Malcolm Rowland
+object: Bria Potts
+object: Jamarcus Aguirre
+object: Marcos Foley
+object: Kallie Gaines
+object: Jaden David
+object: Finnegan Miller
+object: Coleman Stuart
+object: Harley Duffy
+object: Darwin Espinoza
+object: Semaj Tanner
+object: Lauren Summers
+object: Paul Larsen
+object: Damon Bass
+object: Tomas Baird
+object: Gael Wells
+object: Cassie Sellers
+object: Camren Fox
 object: Mara Franklin
+object: Demarcus Garza
+object: Isabela Liu
+object: Edith Rios
+object: Jett Beard
+object: Holden Larsen
+object: Julian Orozco
+object: Matias Bell
+object: Fletcher Hess
+object: Nash Wilkinson
+object: Cristina Oliver
+object: Jocelyn Griffin
+object: Ramiro Rocha
+object: Turner Holt
+object: Deja Hays
+object: Shirley Copeland
+object: Jazlene Arroyo
+object: Lydia Whitehead
+object: Alisha Douglas
+object: Ronnie Carrillo
 
-Time Query = 17
+Time Query = 2604
 
 
 
 *********************** Query 5 ******************************
-object: Kolby Farrell
+object: Gauge Savage
+object: Yazmin Boone
+object: Maxwell Grimes
+object: Krish Stewart
+object: Alma Newman
+object: Caden Craig
+object: Terry Hinton
+object: Thaddeus Beltran
+object: Ignacio Lopez
+object: Leonard Mullins
+object: Kolton Hardy
+object: Sterling Pennington
+object: Cristina Oliver
+object: Jocelyn Griffin
+object: Lea Lynch
+object: Finley Brandt
+object: Julie Stanton
+object: Kareem Buchanan
+object: Corinne Deleon
+object: Nolan Petty
+object: Dashawn Beasley
+object: Cali Kim
+object: Kasey Mcbride
+object: Luciano Kaufman
+object: Savion Sawyer
+object: Larissa Blackburn
+object: Jocelynn Shannon
+object: Jaime Nichols
 
-Time Query = 13
+Time Query = 1028
 
 
 
 *********************** Query 6 ******************************
+object: Johan Bailey
+object: Addyson Andrade
+object: Cassandra Mcclain
+object: Seamus Mendez
+object: Averi Melton
+object: Maggie Mosley
+object: Kayleigh Jefferson
+object: Maritza Murillo
+object: Rodrigo Guerra
+object: Jakobe Cline
+object: Virginia Valenzuela
+object: Makayla Livingston
+object: Kevin Hopkins
+object: Dante Meza
+object: Anderson Stout
+object: Celia Leblanc
+object: Camryn Yoder
+object: Jax Ellis
+object: Matteo Conley
+object: Karli Rasmussen
+object: Lillian Bond
+object: Karley Booth
+object: Krystal Morgan
+object: Yusuf Spence
+object: Alexia Gilmore
+object: Thalia Travis
+object: Quentin Hanna
+object: Cristian Ayers
 
-Time Query = 5
+Time Query = 586
 
 
 
 *********************** Query 7 ******************************
 object: 100 People: A World Portrait
 object: 2Mayns Events
+object: 3HS India
 object: 3M
+object: AT&T
 object: Action for Happiness
 object: Adidas
 object: Adobe Systems
+object: African Development Bank
 object: African Monitor
-object: African Union
-object: All Party Parliamentary Group on Wellbeing Economics (UK)
-object: Allianz
 
-Time Query = 13
+Time Query = 4933
 
 
 
 *********************** Query 8 ******************************
-object: Barrett Pope
+object: Abigail Carr
 
-Time Query = 7
+Time Query = 849
 
 
 
 *********************** Query 9 ******************************
-object: Göteborg, Sweden
+object: Turku, Finland
+object: Santa Cruz de la Sierra, Bolivia
+object: Niamey, Niger
+object: Culiacán, Mexico
+object: Canberra, Australia
+object: Yamagata, Japan
+object: Inverness, United Kingdom
+object: Pristina, Serbia
+object: Krasnodar, Russia
+object: Lilongwe, Malawi
+object: Plymouth, United Kingdom
+object: Kōfu, Japan
+object: Zapopan, Mexico
+object: Basseterre, Saint Kitts and Nevis
+object: Thessaloniki, Greece
+object: Teresina, Brazil
+object: São José dos Campos, Brazil
+object: Austin, United States
+object: Huế, Vietnam
+object: Magadan, Russia
+object: Kandahar, Afghanistan
+object: Eilat, Israel
+object: Naypyidaw, Burma
+object: Maracaibo, Venezuela
+object: Jerusalem, Israel
+object: Indianapolis, United States
+object: Tórshavn, Denmark
+object: Luxembourg, Luxembourg
+object: Birkirkara, Malta
+object: Yakutsk, Russia
+object: Fukui, Japan
+object: Reno, United States
+object: Donetsk, Ukraine
+object: Bremen, Germany
+object: Adamstown, United Kingdom
+object: Pune, India
+object: Phuket, Thailand
+object: Augusta, United States
+object: Rostov-on-Don, Russia
+object: Jacksonville, United States
+object: Kingston, Jamaica
+object: Amman, Jordan
+object: Boa Vista, Brazil
+object: Puerto Aisén, Chile
+object: Shenzhen,China
+object: Kushiro, Japan
+object: Bern, Switzerland
+object: Qaanaaq, Denmark
+object: Victoria, Canada
+object: Miri, Malaysia
+object: Padang, Indonesia
+object: Maebashi, Japan
+object: Medan, Indonesia
+object: Recife, Brazil
+object: Chongqing,China
+object: Baltimore, United States
 
-Time Query = 14
+Time Query = 3732
 
 
 
 *********************** Query 10 ******************************
+object: Akira Gamble
+object: Deshawn Moon
+object: Solomon Alexander
+object: Lorelei Terry
+object: Madalynn Joseph
+object: Annalise Preston
+object: Ashly Martinez
+object: Kasey Nicholson
+object: Ignacio Lopez
+object: Kailyn Pruitt
 object: Ayden Rice
+object: Siena Taylor
+object: Nash Wilkinson
+object: Aaliyah Vang
+object: Jewel Wagner
+object: Geovanni Hurley
+object: Ethen Bradshaw
+object: Neveah Kennedy
+object: George Buckley
+object: Aiden Gomez
+object: Sarah Small
+object: Landyn Suarez
+object: Landin Ford
+object: Santos Spears
+object: Joanna Eaton
+object: Belen Franco
+object: Serena Allen
 
-Time Query = 20
+Time Query = 402
 
 
 

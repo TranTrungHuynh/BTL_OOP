@@ -8,10 +8,10 @@ import org.eclipse.rdf4j.repository.RepositoryConnection;
 
 import file.io.ReadFile;
 
-public class CreateIRI extends ReadFile {
-	private Connection connection = new Connection();
-	private RepositoryConnection conn = connection.getRepositoryConnection();
-	private ValueFactory valueFactory = conn.getValueFactory();
+public class CreateIRIRelation extends ReadFile {
+	private Connection connection;
+	private RepositoryConnection conn;
+	private ValueFactory valueFactory;
 
 	private final String RELATIONSHIP = "http://shadow.org/relationship/";
 	private IRI relationIRI;
@@ -73,8 +73,12 @@ public class CreateIRI extends ReadFile {
 	protected ArrayList<IRI> listIRIRelationCountryOrganization;
 	protected ArrayList<IRI> listIRIRelationCountryLocation;
 
-	public CreateIRI() {
+	public CreateIRIRelation() {
 		super();
+		
+		connection = new Connection();
+		conn = connection.getRepositoryConnection();
+		valueFactory = conn.getValueFactory();
 		
 		iriPERSON           = valueFactory.createIRI(PERSON);
 		iriCOUNTRY			= valueFactory.createIRI(COUNTRY);    

@@ -1,7 +1,7 @@
 package main;
 
 import file.io.WriteFile;
-import graphdb.uploadData;
+import graphdb.UploadData;
 import graphdb.Query;
 
 public class Main {
@@ -11,17 +11,14 @@ public class Main {
 		int numberOfRelationship = 10000;
 
 		// Define object upload relation and entity
-		uploadData upData = new uploadData();
+		UploadData upData = new UploadData();
 
 		/*==============Upload Entity data to server=========*/
-		upData.upLoadEntity(numberOfEntity);
-
+//		upData.upLoadEntity(numberOfEntity);
 		/*============== Upload Relationship ===================*/
-		upData.uploadRelationData(numberOfRelationship);
+//		upData.uploadRelationData(numberOfRelationship);
+//		upData.closeConnectionCreIRIStatement();
 
-		
-		System.out.println("end");
-		
 		// Define object query
 		Query query         = new Query();
 		WriteFile writeFile = new WriteFile();
